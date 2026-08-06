@@ -1,0 +1,46 @@
+:root {
+  --lunax-black: #09090b;
+  --lunax-black-soft: #0f0f13;
+  --lunax-purple: #7c5cff;
+  --lunax-purple-soft: #a78bff;
+  --lunax-purple-dim: rgba(124, 92, 255, 0.35);
+  --lunax-white: #f5f4ff;
+  --lunax-radius-sm: 12px;
+  --lunax-radius-md: 16px;
+  --lunax-radius-lg: 30px;
+  --lunax-radius-pill: 999px;
+  --lunax-glow: 0 0 60px rgba(124, 92, 255, 0.45);
+  --lunax-glow-soft: 0 0 30px rgba(124, 92, 255, 0.25);
+
+  --lunax-space-1: 4px;
+  --lunax-space-2: 8px;
+  --lunax-space-3: 12px;
+  --lunax-space-4: 16px;
+  --lunax-space-5: 24px;
+  --lunax-space-6: 32px;
+  --lunax-space-8: 48px;
+  --lunax-space-10: 64px;
+
+  --lunax-content-max: 1440px;
+
+  --lunax-text: var(--lunax-white);
+  --lunax-text-muted: rgba(245, 244, 255, 0.55);
+  --lunax-surface: rgba(20, 18, 30, 0.5);
+  --lunax-surface-strong: rgba(9, 9, 11, 0.75);
+  --lunax-surface-border: rgba(124, 92, 255, 0.18);
+  --lunax-ring: rgba(9, 9, 11, 0.9);
+}
+
+:root[data-theme="light"] {
+  --lunax-black: #f4f2fb;
+  --lunax-black-soft: #ebe8f7;
+  --lunax-white: #18122b;
+  --lunax-text: #18122b;
+  --lunax-text-muted: rgba(24, 18, 43, 0.6);
+  --lunax-surface: rgba(255, 255, 255, 0.72);
+  --lunax-surface-strong: rgba(255, 255, 255, 0.88);
+  --lunax-surface-border: rgba(124, 92, 255, 0.25);
+  --lunax-ring: rgba(255, 255, 255, 0.9);
+  --lunax-glow: 0 0 40px rgba(124, 92, 255, 0.22);
+  --lunax-glow-soft: 0 0 20px rgba(124, 92, 255, 0.16);
+}

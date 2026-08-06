@@ -1,0 +1,67 @@
+.lunax-background {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  overflow: hidden;
+  background: var(--lunax-black);
+}
+
+.lunax-background::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(120% 70% at 50% 0%, rgba(124, 92, 255, 0.28), transparent 60%),
+    radial-gradient(80% 60% at 100% 100%, rgba(124, 92, 255, 0.16), transparent 65%),
+    radial-gradient(80% 60% at 0% 100%, rgba(124, 92, 255, 0.14), transparent 65%);
+}
+
+.lunax-stars {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.lunax-star {
+  position: absolute;
+  width: 1.5px;
+  height: 1.5px;
+  border-radius: 50%;
+  background: var(--lunax-purple-soft);
+  opacity: 0.45;
+  animation: lunax-twinkle 4s ease-in-out infinite;
+}
+
+:root[data-theme="light"] .lunax-star {
+  opacity: 0.3;
+}
+
+@keyframes lunax-twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.75; }
+}
+
+.lunax-particle {
+  position: absolute;
+  bottom: -10%;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--lunax-purple-soft);
+  box-shadow: 0 0 6px 2px rgba(124, 92, 255, 0.5);
+  opacity: 0;
+  animation: lunax-float linear infinite;
+}
+
+@keyframes lunax-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.35; }
+  100% {
+    transform: translateY(-110vh) translateX(var(--lunax-drift-x, 20px));
+    opacity: 0;
+  }
+}

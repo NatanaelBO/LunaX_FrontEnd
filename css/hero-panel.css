@@ -1,0 +1,183 @@
+.lunax-panel {
+  position: relative;
+  width: min(620px, 92vw);
+  aspect-ratio: 5 / 3;
+  border-radius: var(--lunax-radius-lg);
+  background: linear-gradient(160deg, rgba(28, 22, 40, 0.55), rgba(9, 9, 11, 0.7));
+  border: 1px solid var(--lunax-purple-dim);
+  box-shadow: var(--lunax-glow), inset 0 0 40px rgba(124, 92, 255, 0.06);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  overflow: hidden;
+}
+
+.lunax-panel__header {
+  position: absolute;
+  top: 20px;
+  left: 24px;
+  right: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.lunax-panel__logo {
+  display: flex;
+  align-items: center;
+}
+
+.lunax-panel__logo img {
+  height: 32px;
+  width: auto;
+}
+
+.lunax-panel__dots {
+  display: flex;
+  gap: 5px;
+}
+
+.lunax-panel__dots span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(245, 244, 255, 0.35);
+}
+
+.lunax-panel__dots span:first-child {
+  background: var(--lunax-purple-soft);
+}
+
+.lunax-panel__mascot {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.lunax-panel__mascot::before {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  width: 60%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.4), transparent 70%);
+  filter: blur(20px);
+}
+
+.lunax-panel__mascot img {
+  position: relative;
+  transform: translateY(5%);
+  max-height: 98%;
+  max-width: 72%;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.5));
+}
+
+.lunax-card {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-radius: var(--lunax-radius-md);
+  background: var(--lunax-surface);
+  border: 1px solid rgba(124, 92, 255, 0.25);
+  box-shadow: var(--lunax-glow-soft);
+  backdrop-filter: blur(10px);
+}
+
+.lunax-card__icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--lunax-purple-soft), var(--lunax-purple));
+  display: grid;
+  place-items: center;
+  color: var(--lunax-white);
+  flex-shrink: 0;
+}
+
+.lunax-card__lines {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lunax-card__title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--lunax-white);
+  white-space: nowrap;
+}
+
+.lunax-card__subtitle {
+  font-size: 11.5px;
+  color: var(--lunax-text-muted);
+  white-space: nowrap;
+}
+
+.lunax-card--badge-left {
+  top: 20%;
+  left: 5%;
+}
+
+.lunax-card--badge-right {
+  top: 20%;
+  right: 5%;
+}
+
+.lunax-card--rating {
+  bottom: 12%;
+  left: 6%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.lunax-card--rating .lunax-card__title {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.lunax-stars-row {
+  display: flex;
+  gap: 3px;
+}
+
+.lunax-stars-row svg {
+  width: 13px;
+  height: 13px;
+  fill: #f5b942;
+}
+
+.lunax-card--avatars {
+  bottom: 12%;
+  right: 6%;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.lunax-avatar-stack {
+  display: flex;
+}
+
+.lunax-avatar {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid var(--lunax-ring);
+  margin-left: -10px;
+  object-fit: cover;
+  background: var(--lunax-black);
+}
+
+.lunax-avatar:first-child {
+  margin-left: 0;
+}

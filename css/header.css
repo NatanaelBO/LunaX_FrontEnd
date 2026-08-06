@@ -1,0 +1,206 @@
+.lunax-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.2s ease, backdrop-filter 0.2s ease, border-color 0.2s ease;
+}
+
+.lunax-header.is-scrolled {
+  background: var(--lunax-surface-strong);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom-color: var(--lunax-purple-dim);
+}
+
+.lunax-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--lunax-space-6);
+  max-width: var(--lunax-content-max);
+  margin: 0 auto;
+  padding: var(--lunax-space-5) var(--lunax-space-10);
+}
+
+.lunax-header__logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lunax-header__logo img {
+  height: 52px;
+  width: auto;
+}
+
+.lunax-header__search {
+  flex: 1;
+  max-width: 560px;
+}
+
+.lunax-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-shrink: 0;
+}
+
+.lunax-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--lunax-white);
+  opacity: 0.85;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  padding: 0;
+}
+
+.lunax-nav__link:hover {
+  opacity: 1;
+}
+
+.lunax-nav__link svg {
+  width: 14px;
+  height: 14px;
+}
+
+.lunax-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.lunax-btn-anunciar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 18px;
+  border-radius: var(--lunax-radius-pill);
+  background: var(--lunax-white);
+  color: var(--lunax-black);
+  border: none;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(245, 244, 255, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lunax-btn-anunciar:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(245, 244, 255, 0.25);
+}
+
+.lunax-btn-anunciar svg {
+  width: 14px;
+  height: 14px;
+}
+
+.lunax-icon-btn {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(124, 92, 255, 0.08);
+  border: 1px solid rgba(124, 92, 255, 0.3);
+  color: var(--lunax-white);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lunax-icon-btn:hover {
+  border-color: var(--lunax-purple);
+  box-shadow: var(--lunax-glow-soft);
+}
+
+.lunax-icon-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.lunax-icon-btn--user {
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.lunax-icon-btn--user img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lunax-account {
+  position: relative;
+}
+
+.lunax-account-menu {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  z-index: 50;
+  width: 220px;
+  padding: 8px;
+  border-radius: var(--lunax-radius-md);
+  background: var(--lunax-surface-strong);
+  border: 1px solid var(--lunax-surface-border);
+  box-shadow: var(--lunax-glow-soft), 0 20px 40px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+}
+
+.lunax-account-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lunax-account-menu__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: var(--lunax-radius-sm);
+  background: none;
+  border: none;
+  color: var(--lunax-text);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.lunax-account-menu__item:hover {
+  background: rgba(124, 92, 255, 0.12);
+}
+
+.lunax-account-menu__item svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  color: var(--lunax-purple-soft);
+}
+
+.lunax-account-menu__divider {
+  height: 1px;
+  margin: 6px 8px;
+  background: var(--lunax-surface-border);
+}
