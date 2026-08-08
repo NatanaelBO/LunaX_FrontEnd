@@ -100,6 +100,17 @@
   filter: drop-shadow(0 8px 20px rgba(124, 92, 255, 0.35));
 }
 
+/* Correção de tamanho: os desenhos dos passos 3 e 5 têm elementos decorativos
+   (vassoura, moedas voando) que deixam a personagem menor dentro do quadro,
+   então compensamos aumentando a imagem só nesses dois casos. */
+.lunax-hiw__step:nth-child(3) .lunax-hiw__step-mascot img {
+  width: 122%;
+}
+
+.lunax-hiw__step:nth-child(5) .lunax-hiw__step-mascot img {
+  width: 145%;
+}
+
 .lunax-hiw__step-marker {
   display: flex;
   flex-direction: column;

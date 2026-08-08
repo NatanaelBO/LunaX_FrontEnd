@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>King Legacy - Roblox - LunaX</title>
+  <title>Blog - LunaX</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <script>
     try {
@@ -19,22 +19,15 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/search-bar.css" />
   <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/anunciar-page.css" />
-  <link rel="stylesheet" href="css/categorias-page.css" />
-  <link rel="stylesheet" href="css/produtos-page.css" />
+  <link rel="stylesheet" href="css/blog-page.css" />
   <link rel="stylesheet" href="css/theme-light.css" />
-  <link rel="stylesheet" href="css/loading.css" />
 </head>
 <body>
-  <div class="lunax-loading" id="lunax-loading">
-    <div class="lunax-loading__spinner"></div>
-  </div>
-
   <div class="lunax-background">
     <div class="lunax-stars"></div>
   </div>
 
-  <header class="lunax-header">
+<header class="lunax-header">
    <div class="lunax-header__inner">
     <a class="lunax-header__logo" href="index.html">
       <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
@@ -352,221 +345,129 @@
    </div>
   </header>
 
-  <main class="lunax-shop">
-    <nav class="lunax-breadcrumb">
-      <a href="index.html">Início</a>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="9 18 15 12 9 6" />
-      </svg>
-      <a href="categorias.html">Jogos</a>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="9 18 15 12 9 6" />
-      </svg>
-      <a href="produtos.html">Roblox</a>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-        <polyline points="9 18 15 12 9 6" />
-      </svg>
-      <span>King Legacy</span>
-    </nav>
-
-    <div class="lunax-shop__header">
-      <div class="lunax-shop__cover">
-        <img src="assets/images/games/roblox.webp" alt="Roblox" />
-      </div>
-      <div class="lunax-shop__heading">
-        <span class="lunax-shop__eyebrow">Roblox</span>
-        <h1 class="lunax-shop__title">King Legacy</h1>
-      </div>
-      <div class="lunax-shop__sort">
-        <span class="lunax-shop__sort-label">Ordenar</span>
-        <div class="lunax-select-dropdown" data-dropdown data-select>
-          <button class="lunax-select-trigger" type="button" data-dropdown-trigger aria-haspopup="listbox" aria-expanded="false">
-            <span data-select-label>Mais vendidos</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-          <div class="lunax-select-menu" data-dropdown-menu role="listbox">
-            <button class="lunax-select-option is-active" type="button" data-select-option role="option" aria-selected="true">Mais vendidos</button>
-            <button class="lunax-select-option" type="button" data-select-option role="option" aria-selected="false">Menor preço</button>
-            <button class="lunax-select-option" type="button" data-select-option role="option" aria-selected="false">Maior preço</button>
-            <button class="lunax-select-option" type="button" data-select-option role="option" aria-selected="false">Mais recentes</button>
-          </div>
-        </div>
-      </div>
+  <main class="lunax-blog">
+    <div class="lunax-blog__header">
+      <span class="lunax-badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+        Novidades e dicas
+      </span>
+      <h1 class="lunax-blog__title">Blog LunaX</h1>
+      <p class="lunax-blog__subtitle">
+        Dicas de segurança, novidades da plataforma e conteúdo sobre o mercado de ativos digitais.
+      </p>
     </div>
 
-    <div class="lunax-shop__body">
-      <aside>
-        <div class="lunax-shop__panel" id="painel-subcategorias">
-          <h2 class="lunax-shop__panel-title">Categorias</h2>
-
-          <div class="lunax-shop__cat-search">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="7" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-            </svg>
-            <input type="text" id="categoria-busca" placeholder="Filtrar categoria" />
-          </div>
-
-          <div class="lunax-shop__cat-list" id="subcategoria-lista">
-            <a class="lunax-shop__cat-item" href="produtos.html">Todos</a>
-            <a class="lunax-shop__cat-item" href="roblox-adopt-me.html">Adopt Me</a>
-            <a class="lunax-shop__cat-item" href="roblox-blox-fruits.html">Blox Fruits</a>
-            <a class="lunax-shop__cat-item" href="roblox-brookhaven.html">Brookhaven</a>
-            <a class="lunax-shop__cat-item" href="roblox-murder-mystery-2.html">Murder Mystery 2</a>
-            <a class="lunax-shop__cat-item" href="roblox-grow-a-garden.html">Grow a Garden</a>
-            <a class="lunax-shop__cat-item" href="roblox-tower-of-hell.html">Tower of Hell</a>
-            <a class="lunax-shop__cat-item" href="roblox-pet-simulator-99.html">Pet Simulator 99</a>
-            <a class="lunax-shop__cat-item is-active" href="roblox-king-legacy.html">King Legacy</a>
-            <a class="lunax-shop__cat-item" href="roblox-blade-ball.html">Blade Ball</a>
-            <a class="lunax-shop__cat-item" href="roblox-da-hood.html">Da Hood</a>
-          </div>
-        </div>
-
-        <div class="lunax-shop__panel">
-          <button class="lunax-shop__panel-toggle" type="button" data-panel-toggle aria-expanded="false" aria-controls="filtros-conteudo">
-            <h2 class="lunax-shop__panel-title">Filtros</h2>
-            <svg class="lunax-shop__panel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
-          </button>
-
-          <div class="lunax-shop__panel-content is-collapsed" id="filtros-conteudo" data-panel-content>
-          <div class="lunax-shop__filter-group">
-            <span class="lunax-shop__filter-label">Entrega</span>
-            <label class="lunax-shop__check">
-              <input type="checkbox" name="filtro-entrega" value="auto" />
-              <span class="lunax-shop__check-box"></span>
-              <svg class="lunax-shop__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="1" y="7" width="13" height="9" rx="1" />
-                <path d="M14 10h4l3 3v3h-7z" />
-                <circle cx="6" cy="18" r="1.6" />
-                <circle cx="16.5" cy="18" r="1.6" />
-              </svg>
-              Automática
-            </label>
-            <label class="lunax-shop__check">
-              <input type="checkbox" name="filtro-entrega" value="manual" />
-              <span class="lunax-shop__check-box"></span>
-              <svg class="lunax-shop__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
-                <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
-                <path d="M12 6v13.5" />
-              </svg>
-              Manual
-            </label>
-          </div>
-
-          <div class="lunax-shop__filter-divider"></div>
-
-          <div class="lunax-shop__filter-group">
-            <span class="lunax-shop__filter-label">Preço</span>
-            <div class="lunax-shop__filter-row">
-              <div>
-                <label for="preco-min">Mínimo</label>
-                <input class="lunax-input" type="number" id="preco-min" placeholder="Mín." />
-              </div>
-              <div>
-                <label for="preco-max">Máximo</label>
-                <input class="lunax-input" type="number" id="preco-max" placeholder="Máx." />
-              </div>
-            </div>
-          </div>
-
-          <div class="lunax-shop__filter-divider"></div>
-
-          <div class="lunax-shop__filter-group">
-            <label for="rep-min" class="lunax-shop__filter-label">Reputação mínima</label>
-            <input class="lunax-input" type="number" id="rep-min" placeholder="Ex: 100" />
-          </div>
-
-          <button class="lunax-btn-primary lunax-shop__filter-apply" type="button" id="aplicar-filtro">
-            Aplicar filtro
-          </button>
-          <button class="lunax-shop__filter-reset" type="button" id="limpar-filtro">
-            Limpar filtros
-          </button>
-          </div>
-        </div>
-      </aside>
-
-      <div class="lunax-product-grid" id="produtos-grid">
-        <div class="lunax-product-card-slot" data-price="95" data-type="conta" data-delivery="manual" data-rep="156" data-sub="king-legacy">
-          <a class="lunax-product-card" href="#">
-            <div class="lunax-product-card__cover">
-              <div class="lunax-product-card__cover-track">
-                <img src="assets/images/games/roblox.webp" alt="Roblox" />
-                <img src="assets/images/games/roblox.webp" alt="Roblox" />
-                <img src="assets/images/games/roblox.webp" alt="Roblox" />
-              </div>
-              <div class="lunax-product-card__cover-progress"></div>
-              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
-                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
-                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
-                  <path d="M12 6v13.5" />
-                </svg>
-                Manual
-              </span>
-            </div>
-            <div class="lunax-product-card__bodyrow">
-            <div class="lunax-product-card__body">
-              <h3 class="lunax-product-card__title">King Legacy - Fruta Dragão Awakened + Level Max</h3>
-              <span class="lunax-product-card__price">R$ 95,00</span>
-              <div class="lunax-product-card__seller">
-                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
-                <span class="lunax-product-card__seller-name">KingGrind</span>
-                <span class="lunax-product-card__seller-rep">
-                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-                  156
-                </span>
-              </div>
-            </div>
-            <div class="lunax-product-card__expand">
-              <div class="lunax-product-card__expand-inner">
-              <p class="lunax-product-card__desc">Fruta Dragão desperta e conta no nível máximo, pronta para dominar os mares.</p>
-              <div class="lunax-product-card__expand-foot">
-                <span class="lunax-product-card__views">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
-                  980 acessos
-                </span>
-              </div>
-              </div>
-            </div>
-            </div>
-          </a>
+    <a class="lunax-blog__featured" href="#">
+      <div class="lunax-blog__featured-cover">
+        <img src="assets/images/mascote-passos/mascote-passos1.png" alt="" />
+      </div>
+      <div>
+        <span class="lunax-blog__featured-tag">Segurança</span>
+        <h2 class="lunax-blog__featured-title">
+          Como identificar vendedores confiáveis na LunaX
+        </h2>
+        <p class="lunax-blog__featured-excerpt">
+          Reputação, tempo de conta e avaliações: veja os sinais que indicam uma negociação
+          segura antes de fechar sua próxima compra.
+        </p>
+        <div class="lunax-blog__featured-meta">
+          <span>Equipe LunaX</span>
+          <span>·</span>
+          <span>5 min de leitura</span>
         </div>
       </div>
+    </a>
 
-      <div class="lunax-shop__empty" id="subcategoria-vazio">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="11" cy="11" r="7" />
-          <line x1="21" y1="21" x2="16.65" y2="16.65" />
-        </svg>
-        <h2>Nenhum anúncio encontrado</h2>
-        <p>Não há anúncios para esse filtro no momento. Tente outra categoria ou ajuste os filtros.</p>
-      </div>
+    <div class="lunax-blog__grid">
+      <a class="lunax-blog-card" href="#">
+        <div class="lunax-blog-card__cover">
+          <img src="assets/images/games/roblox.webp" alt="" />
+        </div>
+        <div class="lunax-blog-card__body">
+          <span class="lunax-blog-card__tag">Guia</span>
+          <h3 class="lunax-blog-card__title">Entenda como funciona o pagamento em custódia</h3>
+          <p class="lunax-blog-card__excerpt">
+            Passo a passo de como seu dinheiro fica protegido até a entrega ser confirmada.
+          </p>
+          <span class="lunax-blog-card__meta">Equipe LunaX · 4 min de leitura</span>
+        </div>
+      </a>
+
+      <a class="lunax-blog-card" href="#">
+        <div class="lunax-blog-card__cover">
+          <img src="assets/images/games/valorant.webp" alt="" />
+        </div>
+        <div class="lunax-blog-card__body">
+          <span class="lunax-blog-card__tag">Dicas</span>
+          <h3 class="lunax-blog-card__title">5 cuidados antes de comprar uma conta de Valorant</h3>
+          <p class="lunax-blog-card__excerpt">
+            O que checar na descrição do anúncio antes de fechar negócio.
+          </p>
+          <span class="lunax-blog-card__meta">Equipe LunaX · 3 min de leitura</span>
+        </div>
+      </a>
+
+      <a class="lunax-blog-card" href="#">
+        <div class="lunax-blog-card__cover">
+          <img src="assets/images/games/genshin-impact.webp" alt="" />
+        </div>
+        <div class="lunax-blog-card__body">
+          <span class="lunax-blog-card__tag">Novidades</span>
+          <h3 class="lunax-blog-card__title">LunaX agora com suporte a mais categorias</h3>
+          <p class="lunax-blog-card__excerpt">
+            Confira as novidades mais recentes da plataforma e o que vem por aí.
+          </p>
+          <span class="lunax-blog-card__meta">Equipe LunaX · 2 min de leitura</span>
+        </div>
+      </a>
+
+      <a class="lunax-blog-card" href="#">
+        <div class="lunax-blog-card__cover">
+          <img src="assets/images/games/steam.webp" alt="" />
+        </div>
+        <div class="lunax-blog-card__body">
+          <span class="lunax-blog-card__tag">Guia</span>
+          <h3 class="lunax-blog-card__title">Como anunciar seu primeiro produto na LunaX</h3>
+          <p class="lunax-blog-card__excerpt">
+            Um guia rápido pra criar um anúncio completo e atrair compradores.
+          </p>
+          <span class="lunax-blog-card__meta">Equipe LunaX · 6 min de leitura</span>
+        </div>
+      </a>
+
+      <a class="lunax-blog-card" href="#">
+        <div class="lunax-blog-card__cover">
+          <img src="assets/images/games/minecraft.webp" alt="" />
+        </div>
+        <div class="lunax-blog-card__body">
+          <span class="lunax-blog-card__tag">Dicas</span>
+          <h3 class="lunax-blog-card__title">Vale a pena comprar contas com skins raras?</h3>
+          <p class="lunax-blog-card__excerpt">
+            Prós, contras e como avaliar se o preço pedido faz sentido.
+          </p>
+          <span class="lunax-blog-card__meta">Equipe LunaX · 4 min de leitura</span>
+        </div>
+      </a>
+
+      <a class="lunax-blog-card" href="#">
+        <div class="lunax-blog-card__cover">
+          <img src="assets/images/games/league-of-legends.webp" alt="" />
+        </div>
+        <div class="lunax-blog-card__body">
+          <span class="lunax-blog-card__tag">Segurança</span>
+          <h3 class="lunax-blog-card__title">O que fazer se um pedido não for entregue</h3>
+          <p class="lunax-blog-card__excerpt">
+            Como abrir uma disputa e o que esperar do processo de mediação.
+          </p>
+          <span class="lunax-blog-card__meta">Equipe LunaX · 3 min de leitura</span>
+        </div>
+      </a>
     </div>
   </main>
 
-  <div class="lunax-toast" id="filtro-toast" role="status" aria-live="polite">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-      <circle cx="11" cy="11" r="7" />
-      <line x1="21" y1="21" x2="16.65" y2="16.65" />
-    </svg>
-    <span>Não foi possível encontrar nenhum anúncio para esse filtro.</span>
-  </div>
-
   <script src="js/theme.js"></script>
   <script src="js/dropdowns.js"></script>
-  <script src="js/select-dropdown.js"></script>
-  <script src="js/panel-toggle.js"></script>
   <script src="js/notification-tabs.js"></script>
   <script src="js/header-scroll.js"></script>
-  <script src="js/produtos-categoria.js"></script>
-  <script src="js/produtos-filtro.js"></script>
-  <script src="js/produtos-hover.js"></script>
-  <script src="js/loading.js"></script>
 </body>
 </html>

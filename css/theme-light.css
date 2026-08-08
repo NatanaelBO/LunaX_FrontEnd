@@ -35,15 +35,3 @@
 :root[data-theme="light"] .lunax-btn-anunciar:hover {
   box-shadow: var(--lunax-glow);
 }
-
-:root[data-theme="light"] .lunax-product-card__tag--auto {
-  background: rgba(23, 241, 255, 0.18);
-  color: #0c8ea3;
-  text-shadow: none;
-}
-
-:root[data-theme="light"] .lunax-product-card__tag--manual {
-  background: rgba(255, 176, 32, 0.18);
-  color: #a3660c;
-  text-shadow: none;
-}

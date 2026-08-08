@@ -1,0 +1,124 @@
+.lunax-deals {
+  position: relative;
+  z-index: 5;
+  max-width: var(--lunax-content-max);
+  margin: 0 auto;
+  padding: var(--lunax-space-6) var(--lunax-space-10) var(--lunax-space-10);
+}
+
+.lunax-deals__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--lunax-space-3);
+  margin-bottom: var(--lunax-space-8);
+}
+
+.lunax-deals__title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 800;
+  color: var(--lunax-text);
+}
+
+.lunax-deals__subtitle {
+  max-width: 520px;
+  color: var(--lunax-text-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.lunax-deals__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--lunax-space-5);
+}
+
+.lunax-deal-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--lunax-radius-md);
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
+  overflow: hidden;
+  text-decoration: none;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lunax-deal-card:hover {
+  border-color: var(--lunax-purple-dim);
+  transform: translateY(-3px);
+}
+
+.lunax-deal-card__badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 4px 10px;
+  border-radius: var(--lunax-radius-pill);
+  background: linear-gradient(135deg, #ff5c8a, #ff2e63);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.lunax-deal-card__cover {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.lunax-deal-card__cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lunax-deal-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--lunax-space-4);
+}
+
+.lunax-deal-card__game {
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--lunax-purple-soft);
+}
+
+.lunax-deal-card__title {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--lunax-text);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.lunax-deal-card__prices {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.lunax-deal-card__price-old {
+  font-size: 12.5px;
+  color: var(--lunax-text-muted);
+  text-decoration: line-through;
+}
+
+.lunax-deal-card__price-new {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--lunax-text);
+}
+
+@media (max-width: 720px) {
+  .lunax-deals {
+    padding: var(--lunax-space-5) var(--lunax-space-4) var(--lunax-space-8);
+  }
+}
