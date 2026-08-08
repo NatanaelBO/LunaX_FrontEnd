@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contas Roblox - LunaX</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <script>
+    try {
+      if (localStorage.getItem("lunax-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/background.css" />
+  <link rel="stylesheet" href="css/header.css" />
+  <link rel="stylesheet" href="css/search-bar.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/anunciar-page.css" />
+  <link rel="stylesheet" href="css/categorias-page.css" />
+  <link rel="stylesheet" href="css/produtos-page.css" />
+  <link rel="stylesheet" href="css/theme-light.css" />
+  <link rel="stylesheet" href="css/loading.css" />
+</head>
+<body>
+  <div class="lunax-loading" id="lunax-loading">
+    <div class="lunax-loading__spinner"></div>
+  </div>
+
+  <div class="lunax-background">
+    <div class="lunax-stars"></div>
+  </div>
+
+  <header class="lunax-header">
+   <div class="lunax-header__inner">
+    <a class="lunax-header__logo" href="index.html">
+      <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
+    </a>
+
+    <form class="lunax-search lunax-header__search" role="search">
+      <svg class="lunax-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="7" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input class="lunax-search__input" type="text" placeholder="Buscar produtos..." />
+      <span class="lunax-search__shortcut">Ctrl K</span>
+    </form>
+
+    <nav class="lunax-nav">
+      <a class="lunax-nav__link" href="categorias.html">
+        Categorias
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </a>
+      <a class="lunax-nav__link" href="#">Ofertas</a>
+      <a class="lunax-nav__link" href="#">Blog</a>
+    </nav>
+
+    <div class="lunax-header__actions">
+      <a class="lunax-btn-anunciar" href="anunciar.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+        Anunciar
+      </a>
+      <button class="lunax-icon-btn" type="button" aria-label="Carrinho">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1" />
+          <circle cx="20" cy="21" r="1" />
+          <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+        </svg>
+      </button>
+
+      <div class="lunax-dropdown" data-dropdown>
+        <button class="lunax-icon-btn lunax-icon-btn--notify" type="button" data-dropdown-trigger aria-label="Notificações" aria-haspopup="true" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9" />
+            <path d="M13.7 21a2 2 0 0 1-3.4 0" />
+          </svg>
+          <span class="lunax-icon-btn__badge">3</span>
+        </button>
+
+        <div class="lunax-notify-menu" data-dropdown-menu>
+          <div class="lunax-notify-menu__body">
+            <div class="lunax-notify-menu__rail">
+              <button class="lunax-notify-tab is-active" type="button" data-tab="ofertas" aria-label="Ofertas">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0L3 12V4a2 2 0 0 1 2-2h7.6z" />
+                  <circle cx="8" cy="8" r="1.2" />
+                </svg>
+                <span class="lunax-notify-tab__badge">3</span>
+              </button>
+              <button class="lunax-notify-tab" type="button" data-tab="mensagens" aria-label="Mensagens">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <rect x="2" y="4" width="20" height="16" rx="2" />
+                  <path d="m2 7 10 6 10-6" />
+                </svg>
+              </button>
+              <button class="lunax-notify-tab" type="button" data-tab="conta" aria-label="Conta">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+                </svg>
+              </button>
+              <button class="lunax-notify-tab" type="button" data-tab="chat" aria-label="Chat">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.4 8.4 0 0 1 12.5 3a8.4 8.4 0 0 1 8.5 8.5z" />
+                </svg>
+              </button>
+              <button class="lunax-notify-tab" type="button" data-tab="anuncios" aria-label="Anúncios">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="m3 11 18-5v12L3 14v-3z" />
+                  <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                </svg>
+              </button>
+            </div>
+
+            <div class="lunax-notify-menu__panels">
+              <div class="lunax-notify-panel is-active" data-tab-panel="ofertas">
+                <div class="lunax-notify-menu__header">Ofertas</div>
+
+                <div class="lunax-notify-item">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">O vendedor te respondeu no anúncio: Conta Diamante 175 PDL</span>
+                    <span class="lunax-notify-item__preview">Opa boa noite, infelizmente não tem, mas posso transferir para outro email.</span>
+                    <span class="lunax-notify-item__time">há 2 dias</span>
+                  </div>
+                  <button class="lunax-notify-item__eye" type="button" aria-label="Marcar como visto">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="lunax-notify-item">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">O vendedor te respondeu no anúncio: Coroa 8 Bit (Roblox)</span>
+                    <span class="lunax-notify-item__preview">Opa, esta sim!</span>
+                    <span class="lunax-notify-item__time">há 3 dias</span>
+                  </div>
+                  <button class="lunax-notify-item__eye" type="button" aria-label="Marcar como visto">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="lunax-notify-panel" data-tab-panel="mensagens">
+                <div class="lunax-notify-menu__header">Mensagens</div>
+
+                <a class="lunax-notify-item" href="#">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m2 7 10 6 10-6" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">Nova mensagem de LunaStore</span>
+                    <span class="lunax-notify-item__preview">Consegue me enviar o comprovante do pagamento?</span>
+                    <span class="lunax-notify-item__time">há 1 hora</span>
+                  </div>
+                </a>
+
+                <a class="lunax-notify-item" href="#">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="4" width="20" height="16" rx="2" />
+                      <path d="m2 7 10 6 10-6" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">Nova mensagem de PlayerStore</span>
+                    <span class="lunax-notify-item__preview">Combinado, te aviso assim que confirmar a entrega.</span>
+                    <span class="lunax-notify-item__time">há 1 dia</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="lunax-notify-panel" data-tab-panel="conta">
+                <div class="lunax-notify-menu__header">Conta</div>
+
+                <a class="lunax-notify-item" href="#">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">Novo login detectado</span>
+                    <span class="lunax-notify-item__preview">Acesso realizado em um novo dispositivo.</span>
+                    <span class="lunax-notify-item__time">há 4 dias</span>
+                  </div>
+                </a>
+
+                <a class="lunax-notify-item" href="#">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">E-mail verificado</span>
+                    <span class="lunax-notify-item__preview">Sua verificação de e-mail foi concluída com sucesso.</span>
+                    <span class="lunax-notify-item__time">há 6 dias</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="lunax-notify-panel" data-tab-panel="chat">
+                <div class="lunax-notify-menu__header">Chat</div>
+
+                <a class="lunax-notify-item" href="#">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.4 8.4 0 0 1 12.5 3a8.4 8.4 0 0 1 8.5 8.5z" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">Suporte LunaX</span>
+                    <span class="lunax-notify-item__preview">Seu chamado foi respondido, dá uma olhada!</span>
+                    <span class="lunax-notify-item__time">há 20 min</span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="lunax-notify-panel" data-tab-panel="anuncios">
+                <div class="lunax-notify-menu__header">Anúncios</div>
+
+                <a class="lunax-notify-item" href="#">
+                  <div class="lunax-notify-item__icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="m3 11 18-5v12L3 14v-3z" />
+                      <path d="M11.6 16.8a3 3 0 1 1-5.8-1.6" />
+                    </svg>
+                  </div>
+                  <div class="lunax-notify-item__text">
+                    <span class="lunax-notify-item__title">Promoção relâmpago</span>
+                    <span class="lunax-notify-item__preview">20% de desconto em gift cards selecionados hoje.</span>
+                    <span class="lunax-notify-item__time">há 8 horas</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <a class="lunax-notify-menu__footer" href="#">Ver central de notificações</a>
+        </div>
+      </div>
+
+      <div class="lunax-dropdown" data-dropdown>
+        <button class="lunax-icon-btn lunax-icon-btn--user" type="button" data-dropdown-trigger aria-label="Conta" aria-haspopup="true" aria-expanded="false">
+          <img src="assets/images/profile.png" alt="Foto de perfil" />
+        </button>
+
+        <div class="lunax-account-menu" data-dropdown-menu>
+          <button class="lunax-account-menu__item" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+            Minhas Compras
+          </button>
+
+          <button class="lunax-account-menu__item" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8Z" />
+            </svg>
+            Meus favoritos
+          </button>
+
+          <div class="lunax-account-menu__divider"></div>
+
+          <button class="lunax-account-menu__item" type="button" id="lunax-theme-toggle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" id="lunax-theme-icon">
+              <path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z" />
+            </svg>
+            <span id="lunax-theme-label">Tema claro</span>
+          </button>
+        </div>
+      </div>
+    </div>
+   </div>
+  </header>
+
+  <main class="lunax-shop">
+    <nav class="lunax-breadcrumb">
+      <a href="index.html">Início</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+      <a href="categorias.html">Jogos</a>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <polyline points="9 18 15 12 9 6" />
+      </svg>
+      <span id="categoria-breadcrumb">Roblox</span>
+    </nav>
+
+    <div class="lunax-shop__header">
+      <div class="lunax-shop__cover">
+        <img id="categoria-cover" src="assets/images/games/roblox.webp" alt="Roblox" />
+      </div>
+      <div class="lunax-shop__heading">
+        <span class="lunax-shop__eyebrow" id="categoria-eyebrow">Comprar e vender produtos de Roblox</span>
+        <h1 class="lunax-shop__title" id="categoria-titulo">Roblox</h1>
+      </div>
+      <div class="lunax-shop__sort">
+        <span class="lunax-shop__sort-label">Ordenar</span>
+        <div class="lunax-select-dropdown" data-dropdown data-select>
+          <button class="lunax-select-trigger" type="button" data-dropdown-trigger aria-haspopup="listbox" aria-expanded="false">
+            <span data-select-label>Mais vendidos</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="lunax-select-menu" data-dropdown-menu role="listbox">
+            <button class="lunax-select-option is-active" type="button" data-select-option role="option" aria-selected="true">Mais vendidos</button>
+            <button class="lunax-select-option" type="button" data-select-option role="option" aria-selected="false">Menor preço</button>
+            <button class="lunax-select-option" type="button" data-select-option role="option" aria-selected="false">Maior preço</button>
+            <button class="lunax-select-option" type="button" data-select-option role="option" aria-selected="false">Mais recentes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lunax-shop__body">
+      <aside>
+        <div class="lunax-shop__panel" id="painel-subcategorias">
+          <h2 class="lunax-shop__panel-title">Categorias</h2>
+
+          <div class="lunax-shop__cat-search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+            <input type="text" id="categoria-busca" placeholder="Filtrar categoria" />
+          </div>
+
+          <div class="lunax-shop__cat-list" id="subcategoria-lista">
+            <a class="lunax-shop__cat-item is-active" href="produtos.html">Todos</a>
+            <a class="lunax-shop__cat-item" href="roblox-adopt-me.html">Adopt Me</a>
+            <a class="lunax-shop__cat-item" href="roblox-blox-fruits.html">Blox Fruits</a>
+            <a class="lunax-shop__cat-item" href="roblox-brookhaven.html">Brookhaven</a>
+            <a class="lunax-shop__cat-item" href="roblox-murder-mystery-2.html">Murder Mystery 2</a>
+            <a class="lunax-shop__cat-item" href="roblox-grow-a-garden.html">Grow a Garden</a>
+            <a class="lunax-shop__cat-item" href="roblox-tower-of-hell.html">Tower of Hell</a>
+            <a class="lunax-shop__cat-item" href="roblox-pet-simulator-99.html">Pet Simulator 99</a>
+            <a class="lunax-shop__cat-item" href="roblox-king-legacy.html">King Legacy</a>
+            <a class="lunax-shop__cat-item" href="roblox-blade-ball.html">Blade Ball</a>
+            <a class="lunax-shop__cat-item" href="roblox-da-hood.html">Da Hood</a>
+          </div>
+        </div>
+
+        <div class="lunax-shop__panel">
+          <button class="lunax-shop__panel-toggle" type="button" data-panel-toggle aria-expanded="false" aria-controls="filtros-conteudo">
+            <h2 class="lunax-shop__panel-title">Filtros</h2>
+            <svg class="lunax-shop__panel-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+
+          <div class="lunax-shop__panel-content is-collapsed" id="filtros-conteudo" data-panel-content>
+          <div class="lunax-shop__filter-group">
+            <span class="lunax-shop__filter-label">Entrega</span>
+            <label class="lunax-shop__check">
+              <input type="checkbox" name="filtro-entrega" value="auto" />
+              <span class="lunax-shop__check-box"></span>
+              <svg class="lunax-shop__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="7" width="13" height="9" rx="1" />
+                <path d="M14 10h4l3 3v3h-7z" />
+                <circle cx="6" cy="18" r="1.6" />
+                <circle cx="16.5" cy="18" r="1.6" />
+              </svg>
+              Automática
+            </label>
+            <label class="lunax-shop__check">
+              <input type="checkbox" name="filtro-entrega" value="manual" />
+              <span class="lunax-shop__check-box"></span>
+              <svg class="lunax-shop__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                <path d="M12 6v13.5" />
+              </svg>
+              Manual
+            </label>
+          </div>
+
+          <div class="lunax-shop__filter-divider"></div>
+
+          <div class="lunax-shop__filter-group">
+            <span class="lunax-shop__filter-label">Preço</span>
+            <div class="lunax-shop__filter-row">
+              <div>
+                <label for="preco-min">Mínimo</label>
+                <input class="lunax-input" type="number" id="preco-min" placeholder="Mín." />
+              </div>
+              <div>
+                <label for="preco-max">Máximo</label>
+                <input class="lunax-input" type="number" id="preco-max" placeholder="Máx." />
+              </div>
+            </div>
+          </div>
+
+          <div class="lunax-shop__filter-divider"></div>
+
+          <div class="lunax-shop__filter-group">
+            <label for="rep-min" class="lunax-shop__filter-label">Reputação mínima</label>
+            <input class="lunax-input" type="number" id="rep-min" placeholder="Ex: 100" />
+          </div>
+
+          <button class="lunax-btn-primary lunax-shop__filter-apply" type="button" id="aplicar-filtro">
+            Aplicar filtro
+          </button>
+          <button class="lunax-shop__filter-reset" type="button" id="limpar-filtro">
+            Limpar filtros
+          </button>
+          </div>
+        </div>
+      </aside>
+
+      <div class="lunax-product-grid" id="produtos-grid">
+        <div class="lunax-product-card-slot" data-price="55" data-type="conta" data-delivery="manual" data-rep="152" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Roblox Nível Máximo com Skins Raras</h3>
+              <span class="lunax-product-card__price">R$ 55,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">murilo560</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  152
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta original com nível máximo, diversas skins raras e itens exclusivos. Sem histórico de banimento, entrega imediata após confirmação.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  3.482 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="89" data-type="robux" data-delivery="auto" data-rep="312" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--auto">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="7" width="13" height="9" rx="1" />
+                  <path d="M14 10h4l3 3v3h-7z" />
+                  <circle cx="6" cy="18" r="1.6" />
+                  <circle cx="16.5" cy="18" r="1.6" />
+                </svg>
+                Automática
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">10.000 Robux - Entrega Automática</h3>
+              <span class="lunax-product-card__price">R$ 89,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">LunaStore</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  312
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Robux entregues automaticamente via gamepass em até 5 minutos após o pagamento ser aprovado.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  5.910 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="120" data-type="conta" data-delivery="manual" data-rep="98" data-sub="adopt-me">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Roblox Full Acesso - Adopt Me Completo</h3>
+              <span class="lunax-product-card__price">R$ 120,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">PlayerStore</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  98
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta com acesso total ao Adopt Me, incluindo pets raros e itens limitados de eventos passados.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  1.204 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="25" data-type="servico" data-delivery="manual" data-rep="1310" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Serviço de Boost de Nível Roblox</h3>
+              <span class="lunax-product-card__price">R$ 25,00 +</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">ArthurMDS</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  1310
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Boost de nível feito manualmente por jogador experiente, sem uso de scripts ou programas de terceiros.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  2.771 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="300" data-type="conta" data-delivery="manual" data-rep="47" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Roblox Rara com Itens Limitados</h3>
+              <span class="lunax-product-card__price">R$ 300,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">GameVault</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  47
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta antiga com itens limitados extremamente raros, alguns descontinuados desde 2019.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  892 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="45" data-type="robux" data-delivery="auto" data-rep="620" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--auto">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="7" width="13" height="9" rx="1" />
+                  <path d="M14 10h4l3 3v3h-7z" />
+                  <circle cx="6" cy="18" r="1.6" />
+                  <circle cx="16.5" cy="18" r="1.6" />
+                </svg>
+                Automática
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">5.000 Robux + Gamepasses</h3>
+              <span class="lunax-product-card__price">R$ 45,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">RobuxShop</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  620
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Robux acompanhados de gamepasses populares já ativados na conta de destino.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  4.156 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="70" data-type="conta" data-delivery="manual" data-rep="163" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Roblox Verificada Desde 2018</h3>
+              <span class="lunax-product-card__price">R$ 70,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">Leolannesjr</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  163
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta verificada por e-mail, criada em 2018, com histórico limpo e sem restrições.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  1.630 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="15" data-type="servico" data-delivery="manual" data-rep="23" data-sub="tower-of-hell">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Serviço Carry Tower of Hell</h3>
+              <span class="lunax-product-card__price">R$ 15,00 +</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">sladexxx</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  23
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Carry completo do mapa Tower of Hell, conclusão garantida em até 24 horas.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  540 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="95" data-type="conta" data-delivery="manual" data-rep="24" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Roblox Premium com Badges Raros</h3>
+              <span class="lunax-product-card__price">R$ 95,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">vituhaxx</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  24
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta com assinatura Premium ativa e badges de eventos raros conquistados ao longo dos anos.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  977 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="160" data-type="robux" data-delivery="auto" data-rep="3979" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--auto">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="7" width="13" height="9" rx="1" />
+                  <path d="M14 10h4l3 3v3h-7z" />
+                  <circle cx="6" cy="18" r="1.6" />
+                  <circle cx="16.5" cy="18" r="1.6" />
+                </svg>
+                Automática
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">20.000 Robux - Pagamento Seguro</h3>
+              <span class="lunax-product-card__price">R$ 160,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">banekai</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  3979
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Robux entregues com segurança via método verificado, sem risco de estorno ou bloqueio.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  6.320 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="65" data-type="conta" data-delivery="manual" data-rep="210" data-sub="pet-simulator-99">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Pet Simulator 99 - Pets Raros + Gemas</h3>
+              <span class="lunax-product-card__price">R$ 65,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">PetKingBR</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  210
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta com dezenas de pets lendários e milhares de gemas acumuladas. Ideal para quem quer começar já endgame.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  1.850 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="130" data-type="robux" data-delivery="auto" data-rep="890" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--auto">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="7" width="13" height="9" rx="1" />
+                  <path d="M14 10h4l3 3v3h-7z" />
+                  <circle cx="6" cy="18" r="1.6" />
+                  <circle cx="16.5" cy="18" r="1.6" />
+                </svg>
+                Automática
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">15.000 Robux - Entrega Instantânea</h3>
+              <span class="lunax-product-card__price">R$ 130,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">RobuxExpress</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  890
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Robux entregues em segundos após a confirmação do pagamento, direto na sua conta.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  3.240 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="180" data-type="conta" data-delivery="manual" data-rep="540" data-sub="blox-fruits">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Blox Fruits - Awakened Dragon Full Stats</h3>
+              <span class="lunax-product-card__price">R$ 180,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">FruitMaster</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  540
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Fruta Dragão desperta, stats zerados prontos para redistribuir, nível máximo em todas as ilhas.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  2.910 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="20" data-type="servico" data-delivery="manual" data-rep="78" data-sub="blade-ball">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Serviço Raid Blade Ball - Vitórias Garantidas</h3>
+              <span class="lunax-product-card__price">R$ 20,00 +</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">BladePro</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  78
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Serviço de vitórias em partidas ranqueadas de Blade Ball, feito por jogador top do ranking.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  410 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="40" data-type="conta" data-delivery="manual" data-rep="312" data-sub="brookhaven">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Brookhaven - Casa Completa + Carros</h3>
+              <span class="lunax-product-card__price">R$ 40,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">BrookVillas</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  312
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Casa totalmente mobiliada com garagem e frota de carros premium desbloqueados.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  1.120 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="95" data-type="conta" data-delivery="manual" data-rep="156" data-sub="king-legacy">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">King Legacy - Fruta Dragão Awakened + Level Max</h3>
+              <span class="lunax-product-card__price">R$ 95,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">KingGrind</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  156
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Fruta Dragão desperta e conta no nível máximo, pronta para dominar os mares.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  980 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="22" data-type="robux" data-delivery="auto" data-rep="1450" data-sub="geral">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--auto">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="1" y="7" width="13" height="9" rx="1" />
+                  <path d="M14 10h4l3 3v3h-7z" />
+                  <circle cx="6" cy="18" r="1.6" />
+                  <circle cx="16.5" cy="18" r="1.6" />
+                </svg>
+                Automática
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">2.500 Robux - Pagamento via Pix</h3>
+              <span class="lunax-product-card__price">R$ 22,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">PixRobux</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  1450
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Robux entregues via Pix com confirmação automática, sem burocracia.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  5.670 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="12" data-type="servico" data-delivery="manual" data-rep="302" data-sub="murder-mystery-2">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Serviço Boost Murder Mystery 2 - Godly Garantido</h3>
+              <span class="lunax-product-card__price">R$ 12,00 +</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">MM2Trader</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  302
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Boost de itens Godly em Murder Mystery 2, entrega garantida ou seu dinheiro de volta.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  730 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="55" data-type="conta" data-delivery="manual" data-rep="67" data-sub="da-hood">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Conta Da Hood - Rank Max + Skins Raras</h3>
+              <span class="lunax-product-card__price">R$ 55,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">HoodLegend</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  67
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Conta com rank máximo e coleção de skins raras de temporadas antigas.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  340 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="lunax-product-card-slot" data-price="30" data-type="conta" data-delivery="manual" data-rep="189" data-sub="grow-a-garden">
+          <a class="lunax-product-card" href="#">
+            <div class="lunax-product-card__cover">
+              <div class="lunax-product-card__cover-track">
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+                <img src="assets/images/games/roblox.webp" alt="Roblox" />
+              </div>
+              <div class="lunax-product-card__cover-progress"></div>
+              <span class="lunax-product-card__tag lunax-product-card__tag--manual">
+                <svg class="lunax-product-card__tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 6c-1.5-1-4-1.5-7-1v13c3 0 5.5.5 7 1.5" />
+                  <path d="M12 6c1.5-1 4-1.5 7-1v13c-3 0-5.5.5-7 1.5" />
+                  <path d="M12 6v13.5" />
+                </svg>
+                Manual
+              </span>
+            </div>
+            <div class="lunax-product-card__bodyrow">
+            <div class="lunax-product-card__body">
+              <h3 class="lunax-product-card__title">Grow a Garden - Sementes Raras + Pets</h3>
+              <span class="lunax-product-card__price">R$ 30,00</span>
+              <div class="lunax-product-card__seller">
+                <img class="lunax-product-card__seller-avatar" src="assets/images/profile.png" alt="" />
+                <span class="lunax-product-card__seller-name">GardenShop</span>
+                <span class="lunax-product-card__seller-rep">
+                  <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
+                  189
+                </span>
+              </div>
+            </div>
+            <div class="lunax-product-card__expand">
+              <div class="lunax-product-card__expand-inner">
+              <p class="lunax-product-card__desc">Sementes e pets raros para turbinar seu jardim, alguns já mutados.</p>
+              <div class="lunax-product-card__expand-foot">
+                <span class="lunax-product-card__views">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
+                  1.560 acessos
+                </span>
+              </div>
+              </div>
+            </div>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="lunax-shop__empty" id="subcategoria-vazio">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="7" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <h2>Nenhum anúncio encontrado</h2>
+        <p>Não há anúncios para esse filtro no momento. Tente outra categoria ou ajuste os filtros.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="lunax-toast" id="filtro-toast" role="status" aria-live="polite">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="7" />
+      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+    </svg>
+    <span>Não foi possível encontrar nenhum anúncio para esse filtro.</span>
+  </div>
+
+  <script src="js/theme.js"></script>
+  <script src="js/dropdowns.js"></script>
+  <script src="js/select-dropdown.js"></script>
+  <script src="js/panel-toggle.js"></script>
+  <script src="js/notification-tabs.js"></script>
+  <script src="js/header-scroll.js"></script>
+  <script src="js/produtos-categoria.js"></script>
+  <script src="js/produtos-filtro.js"></script>
+  <script src="js/produtos-hover.js"></script>
+  <script src="js/loading.js"></script>
+</body>
+</html>

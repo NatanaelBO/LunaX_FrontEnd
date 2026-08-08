@@ -13,6 +13,10 @@
   border-color: rgba(124, 92, 255, 0.5);
 }
 
+:root[data-theme="light"] .lunax-wizard-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.75), rgba(244, 242, 251, 0.6));
+}
+
 :root[data-theme="light"] .lunax-btn-secondary {
   border-color: rgba(24, 18, 43, 0.2);
 }
@@ -32,6 +36,14 @@
   box-shadow: var(--lunax-glow);
 }
 
-:root[data-theme="light"] .lunax-category-card__cover::before {
-  background: radial-gradient(120% 100% at 30% 0%, rgba(255, 255, 255, 0.12), transparent 55%);
+:root[data-theme="light"] .lunax-product-card__tag--auto {
+  background: rgba(23, 241, 255, 0.18);
+  color: #0c8ea3;
+  text-shadow: none;
+}
+
+:root[data-theme="light"] .lunax-product-card__tag--manual {
+  background: rgba(255, 176, 32, 0.18);
+  color: #a3660c;
+  text-shadow: none;
 }

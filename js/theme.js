@@ -1,5 +1,10 @@
 function atualizarBotaoTema() {
   const claro = document.documentElement.getAttribute("data-theme") === "light";
+
+  document.querySelectorAll("[data-logo-swap]").forEach((logo) => {
+    logo.src = claro ? "assets/images/logo2.png" : "assets/images/logo.png";
+  });
+
   const rotulo = document.getElementById("lunax-theme-label");
   const icone = document.getElementById("lunax-theme-icon");
   if (!rotulo || !icone) return;

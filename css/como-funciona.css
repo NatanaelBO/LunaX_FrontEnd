@@ -1,0 +1,228 @@
+.lunax-hiw {
+  position: relative;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: var(--lunax-space-10) var(--lunax-space-5) var(--lunax-space-10);
+}
+
+.lunax-hiw__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--lunax-space-3);
+  margin-bottom: var(--lunax-space-10);
+}
+
+.lunax-hiw__title {
+  font-size: clamp(30px, 5vw, 46px);
+  font-weight: 800;
+  color: var(--lunax-text);
+  line-height: 1.15;
+}
+
+.lunax-hiw__subtitle {
+  max-width: 480px;
+  color: var(--lunax-text-muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.lunax-hiw__timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.lunax-hiw__step {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--lunax-space-5);
+  padding-bottom: var(--lunax-space-6);
+}
+
+.lunax-hiw__step--last {
+  padding-bottom: 0;
+}
+
+.lunax-hiw__step-card {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: stretch;
+  gap: var(--lunax-space-5);
+  border-radius: var(--lunax-radius-lg);
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  overflow: hidden;
+}
+
+.lunax-hiw__step-content {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--lunax-space-5) 0 var(--lunax-space-5) var(--lunax-space-6);
+}
+
+.lunax-hiw__step-mascot {
+  position: relative;
+  flex-shrink: 0;
+  width: 150px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--lunax-space-4) var(--lunax-space-5) 0 0;
+}
+
+.lunax-hiw__step-mascot::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 130%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(124, 92, 255, 0.5), transparent 70%);
+  filter: blur(18px);
+  z-index: 0;
+}
+
+.lunax-hiw__step-mascot img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 20px rgba(124, 92, 255, 0.35));
+}
+
+.lunax-hiw__step-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.lunax-hiw__step-icon {
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--lunax-purple-soft), var(--lunax-purple));
+  color: #fff;
+  box-shadow: var(--lunax-glow-soft);
+  flex-shrink: 0;
+}
+
+.lunax-hiw__step-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.lunax-hiw__step-line {
+  flex: 1;
+  width: 2px;
+  min-height: 48px;
+  margin: var(--lunax-space-2) 0;
+  background: linear-gradient(var(--lunax-purple-dim), transparent);
+}
+
+.lunax-hiw__step-eyebrow {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--lunax-purple-soft);
+  margin-bottom: 4px;
+}
+
+.lunax-hiw__step-title {
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--lunax-text);
+  margin-bottom: 6px;
+}
+
+.lunax-hiw__step-desc {
+  max-width: 520px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--lunax-text-muted);
+}
+
+.lunax-hiw__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--lunax-space-2);
+  margin-top: var(--lunax-space-6);
+  padding: var(--lunax-space-8) var(--lunax-space-5);
+  border-radius: var(--lunax-radius-lg);
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
+}
+
+.lunax-hiw__cta-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--lunax-text);
+}
+
+.lunax-hiw__cta-subtitle {
+  color: var(--lunax-text-muted);
+  font-size: 14.5px;
+  margin-bottom: var(--lunax-space-3);
+}
+
+.lunax-hiw__cta-actions {
+  display: flex;
+  gap: var(--lunax-space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .lunax-hiw__step-mascot {
+    width: 90px;
+  }
+}
+
+@media (max-width: 560px) {
+  .lunax-hiw__step {
+    gap: var(--lunax-space-3);
+  }
+
+  .lunax-hiw__step-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: var(--lunax-space-4);
+  }
+
+  .lunax-hiw__step-content {
+    padding: 0;
+  }
+
+  .lunax-hiw__step-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .lunax-hiw__step-icon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .lunax-hiw__step-mascot {
+    width: 90px;
+    align-self: center;
+    padding: var(--lunax-space-3) 0 0 0;
+  }
+}

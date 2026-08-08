@@ -1,0 +1,31 @@
+.lunax-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--lunax-black);
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.lunax-loading.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lunax-loading__spinner {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid var(--lunax-surface-border);
+  border-top-color: var(--lunax-purple);
+  animation: lunaxSpin 0.7s linear infinite;
+}
+
+@keyframes lunaxSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}

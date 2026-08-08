@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LunaX - Marketplace de ativos digitais</title>
+  <title>Como funciona - LunaX</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png" />
   <script>
     try {
@@ -18,9 +18,8 @@
   <link rel="stylesheet" href="css/background.css" />
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/hero.css" />
-  <link rel="stylesheet" href="css/hero-panel.css" />
   <link rel="stylesheet" href="css/search-bar.css" />
-  <link rel="stylesheet" href="css/categories.css" />
+  <link rel="stylesheet" href="css/como-funciona.css" />
   <link rel="stylesheet" href="css/theme-light.css" />
 </head>
 <body>
@@ -30,9 +29,9 @@
 
   <header class="lunax-header">
    <div class="lunax-header__inner">
-    <div class="lunax-header__logo">
+    <a class="lunax-header__logo" href="index.html">
       <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
-    </div>
+    </a>
 
     <form class="lunax-search lunax-header__search" role="search">
       <svg class="lunax-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -295,189 +294,170 @@
    </div>
   </header>
 
-  <main class="lunax-hero">
-    <div class="lunax-hero__content">
+  <main class="lunax-hiw">
+    <div class="lunax-hiw__intro">
       <span class="lunax-badge">
         <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-        Plataforma nº1 em ativos digitais
+        Negociação protegida, ponta a ponta
       </span>
 
-      <h1 class="lunax-hero__title">
-        Compre e venda<br />
-        ativos digitais com<br />
-        <span class="lunax-hero__title--accent">segurança.</span>
-      </h1>
-
-      <p class="lunax-hero__subtitle">
-        Contas, moedas, Robux, gift cards, skins, itens e muito mais.
+      <h1 class="lunax-hiw__title">Como funciona a LunaX</h1>
+      <p class="lunax-hiw__subtitle">
+        A LunaX conecta quem vende e quem compra ativos digitais, e garante que
+        o pagamento só é liberado depois que a entrega é confirmada.
       </p>
+    </div>
 
-      <div class="lunax-hero__actions">
-        <button class="lunax-btn-primary" type="button">
+    <div class="lunax-hiw__timeline">
+      <div class="lunax-hiw__step">
+        <div class="lunax-hiw__step-marker">
+          <div class="lunax-hiw__step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
+              <path d="M3 6h18" />
+              <path d="M16 10a4 4 0 0 1-8 0" />
+            </svg>
+          </div>
+          <div class="lunax-hiw__step-line"></div>
+        </div>
+        <div class="lunax-hiw__step-card">
+          <div class="lunax-hiw__step-content">
+            <span class="lunax-hiw__step-eyebrow">Passo 1</span>
+            <h2 class="lunax-hiw__step-title">Vendedor anuncia, comprador escolhe</h2>
+            <p class="lunax-hiw__step-desc">
+              Quem vende cria o anúncio com preço e detalhes da conta, moeda ou item.
+              Quem compra encontra a oferta ideal pela busca ou pelas categorias.
+            </p>
+          </div>
+          <div class="lunax-hiw__step-mascot">
+            <img src="assets/images/mascote-passos/mascote-passos1.png" alt="Mascote LunaX garimpando um produto com uma lupa" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lunax-hiw__step">
+        <div class="lunax-hiw__step-marker">
+          <div class="lunax-hiw__step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+            </svg>
+          </div>
+          <div class="lunax-hiw__step-line"></div>
+        </div>
+        <div class="lunax-hiw__step-card">
+          <div class="lunax-hiw__step-content">
+            <span class="lunax-hiw__step-eyebrow">Passo 2</span>
+            <h2 class="lunax-hiw__step-title">Pagamento fica retido com a LunaX</h2>
+            <p class="lunax-hiw__step-desc">
+              O comprador paga direto na plataforma, mas o valor não vai pro vendedor
+              ainda — a LunaX mantém o dinheiro em custódia até a entrega ser confirmada.
+            </p>
+          </div>
+          <div class="lunax-hiw__step-mascot">
+            <img src="assets/images/mascote-passos/mascote-passos2.png" alt="Mascote LunaX abraçando um baú protegido por um cadeado mágico" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lunax-hiw__step">
+        <div class="lunax-hiw__step-marker">
+          <div class="lunax-hiw__step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
+          </div>
+          <div class="lunax-hiw__step-line"></div>
+        </div>
+        <div class="lunax-hiw__step-card">
+          <div class="lunax-hiw__step-content">
+            <span class="lunax-hiw__step-eyebrow">Passo 3</span>
+            <h2 class="lunax-hiw__step-title">Vendedor realiza a entrega</h2>
+            <p class="lunax-hiw__step-desc">
+              Com o pagamento já garantido, o vendedor transfere a conta, moeda ou
+              item combinado direto pro comprador, dentro do prazo estabelecido.
+            </p>
+          </div>
+          <div class="lunax-hiw__step-mascot">
+            <img src="assets/images/mascote-passos/mascote-passos3.png" alt="Mascote LunaX voando de vassoura com um pacote brilhante" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lunax-hiw__step">
+        <div class="lunax-hiw__step-marker">
+          <div class="lunax-hiw__step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="8 12 11 15 16 9" />
+            </svg>
+          </div>
+          <div class="lunax-hiw__step-line"></div>
+        </div>
+        <div class="lunax-hiw__step-card">
+          <div class="lunax-hiw__step-content">
+            <span class="lunax-hiw__step-eyebrow">Passo 4</span>
+            <h2 class="lunax-hiw__step-title">Comprador confirma o recebimento</h2>
+            <p class="lunax-hiw__step-desc">
+              Depois de conferir o produto, o comprador confirma o recebimento na
+              plataforma. Se não confirmar, a confirmação acontece automaticamente após o prazo.
+            </p>
+          </div>
+          <div class="lunax-hiw__step-mascot">
+            <img src="assets/images/mascote-passos/mascote-passos4.png" alt="Mascote LunaX satisfeita com o polegar para cima e um check mágico" />
+          </div>
+        </div>
+      </div>
+
+      <div class="lunax-hiw__step lunax-hiw__step--last">
+        <div class="lunax-hiw__step-marker">
+          <div class="lunax-hiw__step-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 7v10" />
+              <path d="M9.5 9.5c0-1.1.9-2 2.5-2s2.5.9 2.5 2-1.1 1.5-2.5 2-2.5.9-2.5 2 1.1 2 2.5 2 2.5-.9 2.5-2" />
+            </svg>
+          </div>
+        </div>
+        <div class="lunax-hiw__step-card">
+          <div class="lunax-hiw__step-content">
+            <span class="lunax-hiw__step-eyebrow">Passo 5</span>
+            <h2 class="lunax-hiw__step-title">LunaX libera o pagamento</h2>
+            <p class="lunax-hiw__step-desc">
+              Com a confirmação, o valor é liberado pro vendedor, descontada a taxa
+              da plataforma. Negócio concluído com segurança pros dois lados.
+            </p>
+          </div>
+          <div class="lunax-hiw__step-mascot">
+            <img src="assets/images/mascote-passos/mascote-passos5.png" alt="Mascote LunaX eufórica com a varinha erguida e moedas mágicas ao redor" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lunax-hiw__cta">
+      <h2 class="lunax-hiw__cta-title">Pronto para negociar com segurança?</h2>
+      <p class="lunax-hiw__cta-subtitle">Compre ou anuncie seus ativos digitais na LunaX.</p>
+      <div class="lunax-hiw__cta-actions">
+        <a class="lunax-btn-primary" href="index.html">
           Explorar Marketplace
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
           </svg>
-        </button>
-        <a class="lunax-btn-secondary" href="como-funciona.html">
-          <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" /></svg>
-          Como funciona
         </a>
-      </div>
-
-      <div class="lunax-features">
-        <div class="lunax-feature">
-          <div class="lunax-feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polyline points="1 4 1 10 7 10" />
-              <path d="M3.5 15a9 9 0 1 0 2-9.4L1 10" />
-            </svg>
-          </div>
-          <div class="lunax-feature__text">
-            <span class="lunax-feature__title">Entrega automática</span>
-            <span class="lunax-feature__subtitle">Rápida e segura</span>
-          </div>
-        </div>
-
-        <div class="lunax-feature">
-          <div class="lunax-feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
-            </svg>
-          </div>
-          <div class="lunax-feature__text">
-            <span class="lunax-feature__title">Suporte 24/7</span>
-            <span class="lunax-feature__subtitle">Sempre disponível</span>
-          </div>
-        </div>
-
-        <div class="lunax-feature">
-          <div class="lunax-feature__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
-            </svg>
-          </div>
-          <div class="lunax-feature__text">
-            <span class="lunax-feature__title">100% Seguro</span>
-            <span class="lunax-feature__subtitle">Zero risco para você</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="lunax-panel">
-      <div class="lunax-panel__header">
-        <div class="lunax-panel__logo">
-          <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
-        </div>
-        <div class="lunax-panel__dots">
-          <span></span><span></span><span></span>
-        </div>
-      </div>
-
-      <div class="lunax-panel__mascot">
-        <img src="assets/images/mascote.png" alt="Mascote LunaX" />
-      </div>
-
-      <div class="lunax-card lunax-card--badge-left">
-        <div class="lunax-card__icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+        <a class="lunax-btn-secondary" href="anunciar.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
           </svg>
-        </div>
-        <div class="lunax-card__lines">
-          <span class="lunax-card__title">Entrega Garantida</span>
-          <span class="lunax-card__subtitle">ou seu dinheiro de volta</span>
-        </div>
-      </div>
-
-      <div class="lunax-card lunax-card--badge-right">
-        <div class="lunax-card__icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="11" cy="11" r="7" />
-            <line x1="21" y1="21" x2="16.65" y2="16.65" />
-          </svg>
-        </div>
-        <div class="lunax-card__lines">
-          <span class="lunax-card__title">Suporte Premium</span>
-          <span class="lunax-card__subtitle">Atendimento humano</span>
-        </div>
-      </div>
-
-      <div class="lunax-card lunax-card--rating">
-        <span class="lunax-card__title">5.0 <span class="lunax-card__subtitle">Excelente</span></span>
-        <div class="lunax-stars-row">
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-          <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-        </div>
-        <span class="lunax-card__subtitle">+10k avaliações</span>
-      </div>
-
-      <div class="lunax-card lunax-card--avatars">
-        <div class="lunax-avatar-stack">
-          <img class="lunax-avatar" src="assets/images/profile.png" alt="" />
-          <img class="lunax-avatar" src="assets/images/profile.png" alt="" />
-          <img class="lunax-avatar" src="assets/images/profile.png" alt="" />
-        </div>
-        <span class="lunax-card__subtitle">+2.5k clientes satisfeitos</span>
+          Quero anunciar
+        </a>
       </div>
     </div>
   </main>
 
-  <section class="lunax-categories">
-   <div class="lunax-categories__panel">
-    <div class="lunax-section-header">
-      <h2 class="lunax-section-title">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-        Categorias Populares
-      </h2>
-    </div>
-
-    <div class="lunax-categories__row">
-      <a class="lunax-category-card" href="produtos.html">
-        <img src="assets/images/games/roblox.webp" alt="Roblox" />
-      </a>
-
-      <a class="lunax-category-card" href="valorant.html">
-        <img src="assets/images/games/valorant.webp" alt="Valorant" />
-      </a>
-
-      <a class="lunax-category-card" href="league-of-legends.html">
-        <img src="assets/images/games/league-of-legends.webp" alt="League of Legends" />
-      </a>
-
-      <a class="lunax-category-card" href="minecraft.html">
-        <img src="assets/images/games/minecraft.webp" alt="Minecraft" />
-      </a>
-
-      <a class="lunax-category-card" href="steam.html">
-        <img src="assets/images/games/steam.webp" alt="Steam" />
-      </a>
-
-      <a class="lunax-category-card" href="clash-of-clans.html">
-        <img src="assets/images/games/clash-of-clans.webp" alt="Clash of Clans" />
-      </a>
-
-      <a class="lunax-category-card" href="genshin-impact.html">
-        <img src="assets/images/games/genshin-impact.webp" alt="Genshin Impact" />
-      </a>
-    </div>
-
-    <div class="lunax-categories__more">
-      <span class="lunax-categories__more-line lunax-categories__more-line--left"></span>
-      <a class="lunax-categories__more-link" href="categorias.html">Ver todas categorias</a>
-      <span class="lunax-categories__more-line lunax-categories__more-line--right"></span>
-    </div>
-   </div>
-  </section>
-
-  <script src="js/particles.js"></script>
-  <script src="js/search.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/dropdowns.js"></script>
   <script src="js/notification-tabs.js"></script>

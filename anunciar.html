@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anunciar - LunaX</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <script>
+    try {
+      if (localStorage.getItem("lunax-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/variables.css" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/background.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/anunciar-page.css" />
+  <link rel="stylesheet" href="css/theme-light.css" />
+</head>
+<body>
+  <div class="lunax-background">
+    <div class="lunax-stars"></div>
+  </div>
+
+  <div class="lunax-wizard-topbar">
+    <a class="lunax-wizard-back" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M19 12H5" />
+        <path d="m12 19-7-7 7-7" />
+      </svg>
+      Voltar ao site
+    </a>
+  </div>
+
+  <div class="lunax-wizard-brand">
+    <a href="index.html">
+      <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
+    </a>
+  </div>
+
+  <div class="lunax-wizard-steps">
+    <button class="lunax-wizard-step is-active" type="button" data-step-nav="1">
+      <div class="lunax-wizard-step__circle">1</div>
+      <span class="lunax-wizard-step__label">Conta</span>
+    </button>
+    <button class="lunax-wizard-step" type="button" data-step-nav="2" disabled>
+      <div class="lunax-wizard-step__circle">2</div>
+      <span class="lunax-wizard-step__label">Anúncio</span>
+    </button>
+    <button class="lunax-wizard-step" type="button" data-step-nav="3" disabled>
+      <div class="lunax-wizard-step__circle">3</div>
+      <span class="lunax-wizard-step__label">Imagens</span>
+    </button>
+    <button class="lunax-wizard-step" type="button" data-step-nav="4" disabled>
+      <div class="lunax-wizard-step__circle">4</div>
+      <span class="lunax-wizard-step__label">Resumo</span>
+    </button>
+  </div>
+
+  <main class="lunax-wizard-main">
+    <div class="lunax-wizard-panel is-active" data-step-panel="1">
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+            Seus dados
+          </h2>
+        </div>
+        <div class="lunax-wizard-card__body">
+          <div class="lunax-account-preview">
+            <img class="lunax-account-preview__avatar" src="assets/images/profile.png" alt="Foto de perfil" />
+            <div class="lunax-account-preview__text">
+              <span class="lunax-account-preview__name">Sua conta LunaX</span>
+              <span class="lunax-account-preview__email">Verificada e pronta para anunciar</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
+            </svg>
+            Termos e segurança
+          </h2>
+        </div>
+        <div class="lunax-wizard-card__body">
+          <div class="lunax-checkbox-field">
+            <input type="checkbox" id="termo-uso" />
+            <label for="termo-uso">Li e aceito os <a href="#">Termos de Uso</a> e a <a href="#">Política de Privacidade</a> da LunaX</label>
+          </div>
+          <div class="lunax-checkbox-field">
+            <input type="checkbox" id="termo-veracidade" />
+            <label for="termo-veracidade">Confirmo que as informações fornecidas são verdadeiras e de minha responsabilidade</label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="lunax-wizard-panel" data-step-panel="2">
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="16" rx="2" />
+              <path d="M3 9h18" />
+              <path d="M7 13h6" />
+              <path d="M7 16h4" />
+            </svg>
+            Anúncio
+          </h2>
+        </div>
+
+        <div class="lunax-wizard-card__body">
+          <div class="lunax-field">
+            <label for="titulo">Escolha um título para o seu anúncio</label>
+            <input class="lunax-input" type="text" id="titulo" maxlength="80" placeholder="Digite aqui ( máx. 80 caracteres )" />
+            <p class="lunax-field__hint">
+              Exemplos: Conta LoL diamante full champs, 250 Tibia Coins, Curso de Inglês Avançado, Conta CV. nível 13, Acesso Spotify Premium
+            </p>
+          </div>
+
+          <div class="lunax-field">
+            <label>Modelo do anúncio</label>
+            <p class="lunax-field__hint">
+              Dúvida sobre qual modelo de anúncio escolher? <a href="#">Veja este vídeo</a> que preparamos para você.
+            </p>
+
+            <div class="lunax-model-options">
+              <label class="lunax-model-option">
+                <input type="radio" name="modelo" value="Normal" checked />
+                <span class="lunax-model-option__check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span class="lunax-model-option__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0L3 12V4a2 2 0 0 1 2-2h7.6z" />
+                    <circle cx="8" cy="8" r="1.2" />
+                  </svg>
+                </span>
+                <span class="lunax-model-option__title">Normal</span>
+                <span class="lunax-model-option__desc">O item vendido será exatamente o do título do anúncio cadastrado neste formulário.</span>
+              </label>
+              <label class="lunax-model-option">
+                <input type="radio" name="modelo" value="Dinâmico" />
+                <span class="lunax-model-option__check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span class="lunax-model-option__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="3" width="7" height="7" rx="1.5" />
+                    <rect x="3" y="14" width="7" height="7" rx="1.5" />
+                    <rect x="14" y="14" width="7" height="7" rx="1.5" />
+                  </svg>
+                </span>
+                <span class="lunax-model-option__title">Dinâmico</span>
+                <span class="lunax-model-option__desc">Anuncie vários itens, dando opções para que o cliente escolha qual item ele deseja.</span>
+              </label>
+              <label class="lunax-model-option">
+                <input type="radio" name="modelo" value="Serviço" />
+                <span class="lunax-model-option__check">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                </span>
+                <span class="lunax-model-option__icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M14.7 6.3a4 4 0 1 1-5.4 5.4L3 18v3h3l6.3-6.3" />
+                    <path d="m17 3 4 4-2 2-4-4z" />
+                  </svg>
+                </span>
+                <span class="lunax-model-option__title">Serviço</span>
+                <span class="lunax-model-option__desc">Anuncie um serviço no qual o preço não é fixo e que dependem de orçamentos.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="lunax-field-row">
+            <div class="lunax-field">
+              <label for="valor">Valor do anúncio</label>
+              <input class="lunax-input" type="text" id="valor" value="R$ 0,00" />
+            </div>
+            <div class="lunax-field">
+              <label for="estoque">Quantidade em estoque</label>
+              <input class="lunax-input" type="number" id="estoque" value="1" min="1" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="4" r="2" />
+              <circle cx="5" cy="18" r="2" />
+              <circle cx="19" cy="18" r="2" />
+              <path d="M12 6v4" />
+              <path d="m12 10-7 6" />
+              <path d="m12 10 7 6" />
+            </svg>
+            Tipo de Anúncio
+          </h2>
+        </div>
+        <div class="lunax-wizard-card__body">
+          <div class="lunax-field">
+            <label for="tipo">Qual o tipo do anúncio?</label>
+            <select class="lunax-select" id="tipo">
+              <option>Conta</option>
+              <option>Moedas / Gold</option>
+              <option>Gift Card</option>
+              <option>Item ou Skin</option>
+              <option>Serviço</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="4" r="2" />
+              <circle cx="5" cy="18" r="2" />
+              <circle cx="19" cy="18" r="2" />
+              <path d="M12 6v4" />
+              <path d="m12 10-7 6" />
+              <path d="m12 10 7 6" />
+            </svg>
+            Categoria
+          </h2>
+        </div>
+        <div class="lunax-wizard-card__body">
+          <div class="lunax-field">
+            <label for="categoria">Categoria</label>
+            <select class="lunax-select" id="categoria">
+              <option>Roblox</option>
+              <option>Valorant</option>
+              <option>League of Legends</option>
+              <option>Minecraft</option>
+              <option>Steam</option>
+              <option>Clash of Clans</option>
+              <option>Genshin Impact</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9" />
+              <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
+            </svg>
+            Descrição
+          </h2>
+        </div>
+        <div class="lunax-wizard-card__body">
+          <div class="lunax-field">
+            <label for="descricao">Descreva o seu anúncio</label>
+
+            <div class="lunax-alert">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z" />
+                <path d="M12 9v4" />
+                <path d="M12 17h.01" />
+              </svg>
+              Adicionar contatos pessoais como WhatsApp, Discord, Facebook, ou qualquer outro meio de comunicação fará com que o seu anúncio seja reprovado
+            </div>
+
+            <textarea class="lunax-textarea" id="descricao" placeholder="Digite aqui"></textarea>
+
+            <p class="lunax-field__hint">
+              Forneça o máximo de detalhes para que não haja mal entendidos por parte do cliente. Isso poderá refletir na sua avaliação, assim, você com certeza terá muito mais sucesso em suas vendas aqui na LunaX!
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="lunax-wizard-panel" data-step-panel="3">
+      <section class="lunax-wizard-card">
+        <div class="lunax-wizard-card__header">
+          <h2 class="lunax-wizard-card__title">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="8.5" cy="8.5" r="1.5" />
+              <path d="m21 15-5-5L5 21" />
+            </svg>
+            Imagens do anúncio
+          </h2>
+        </div>
+        <div class="lunax-wizard-card__body">
+          <p class="lunax-field__hint lunax-field__hint--flush">
+            Adicione até 6 imagens do seu produto. A primeira imagem será a capa do anúncio.
+          </p>
+
+          <label class="lunax-upload-dropzone" for="upload-principal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v12" />
+              <path d="m7 8 5-5 5 5" />
+              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2" />
+            </svg>
+            <span class="lunax-upload-dropzone__title">Arraste imagens aqui ou clique para selecionar</span>
+            <span class="lunax-upload-dropzone__hint">PNG, JPG ou WEBP até 5MB cada</span>
+            <input type="file" id="upload-principal" accept="image/*" multiple />
+          </label>
+
+          <div class="lunax-upload-grid" id="upload-grid">
+            <label class="lunax-upload-slot" data-upload-slot>
+              <span class="lunax-upload-slot__badge">Capa</span>
+              <span class="lunax-upload-slot__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Adicionar</span>
+              </span>
+              <img class="lunax-upload-slot__preview" alt="" />
+              <button class="lunax-upload-slot__remove" type="button" data-upload-remove>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <input type="file" accept="image/*" />
+            </label>
+
+            <label class="lunax-upload-slot" data-upload-slot>
+              <span class="lunax-upload-slot__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Adicionar</span>
+              </span>
+              <img class="lunax-upload-slot__preview" alt="" />
+              <button class="lunax-upload-slot__remove" type="button" data-upload-remove>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <input type="file" accept="image/*" />
+            </label>
+
+            <label class="lunax-upload-slot" data-upload-slot>
+              <span class="lunax-upload-slot__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Adicionar</span>
+              </span>
+              <img class="lunax-upload-slot__preview" alt="" />
+              <button class="lunax-upload-slot__remove" type="button" data-upload-remove>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <input type="file" accept="image/*" />
+            </label>
+
+            <label class="lunax-upload-slot" data-upload-slot>
+              <span class="lunax-upload-slot__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Adicionar</span>
+              </span>
+              <img class="lunax-upload-slot__preview" alt="" />
+              <button class="lunax-upload-slot__remove" type="button" data-upload-remove>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <input type="file" accept="image/*" />
+            </label>
+
+            <label class="lunax-upload-slot" data-upload-slot>
+              <span class="lunax-upload-slot__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Adicionar</span>
+              </span>
+              <img class="lunax-upload-slot__preview" alt="" />
+              <button class="lunax-upload-slot__remove" type="button" data-upload-remove>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <input type="file" accept="image/*" />
+            </label>
+
+            <label class="lunax-upload-slot" data-upload-slot>
+              <span class="lunax-upload-slot__placeholder">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                <span>Adicionar</span>
+              </span>
+              <img class="lunax-upload-slot__preview" alt="" />
+              <button class="lunax-upload-slot__remove" type="button" data-upload-remove>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+              <input type="file" accept="image/*" />
+            </label>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="lunax-wizard-panel" data-step-panel="4">
+      <div class="lunax-resumo-view" id="resumo-view">
+        <section class="lunax-wizard-card">
+          <div class="lunax-wizard-card__header">
+            <h2 class="lunax-wizard-card__title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 11l3 3L22 4" />
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+              </svg>
+              Resumo do anúncio
+            </h2>
+          </div>
+          <div class="lunax-wizard-card__body">
+            <div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Título</span>
+                <span class="lunax-summary-value" id="resumo-titulo">—</span>
+              </div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Modelo</span>
+                <span class="lunax-summary-value" id="resumo-modelo">—</span>
+              </div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Tipo</span>
+                <span class="lunax-summary-value" id="resumo-tipo">—</span>
+              </div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Categoria</span>
+                <span class="lunax-summary-value" id="resumo-categoria">—</span>
+              </div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Valor</span>
+                <span class="lunax-summary-value" id="resumo-valor">—</span>
+              </div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Estoque</span>
+                <span class="lunax-summary-value" id="resumo-estoque">—</span>
+              </div>
+              <div class="lunax-summary-row">
+                <span class="lunax-summary-label">Imagens</span>
+                <span class="lunax-summary-value" id="resumo-imagens">—</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="lunax-success-view" id="success-view">
+        <div class="lunax-success-view__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+        </div>
+        <h2 class="lunax-success-view__title">Anúncio publicado com sucesso!</h2>
+        <p class="lunax-success-view__desc">
+          Seu anúncio já está passando por análise e em breve estará visível na loja da LunaX.
+        </p>
+        <a class="lunax-btn-primary" href="index.html">
+          Voltar para a loja
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="lunax-wizard-nav" id="wizard-nav">
+      <button class="lunax-btn-secondary lunax-wizard-nav__back" type="button" id="wizard-back">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M19 12H5" />
+          <path d="m12 19-7-7 7-7" />
+        </svg>
+        Voltar
+      </button>
+      <span class="lunax-wizard-nav__spacer"></span>
+      <button class="lunax-btn-primary" type="button" id="wizard-next">
+        <span id="wizard-next-label">Próximo</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="5" y1="12" x2="19" y2="12" />
+          <polyline points="12 5 19 12 12 19" />
+        </svg>
+      </button>
+    </div>
+  </main>
+
+  <footer class="lunax-wizard-footer">
+    <span>© LunaX 2024-2026 | Todos os direitos reservados.</span>
+    <a href="index.html">Voltar ao site</a>
+  </footer>
+
+  <script src="js/theme.js"></script>
+  <script src="js/wizard.js"></script>
+  <script src="js/wizard-images.js"></script>
+</body>
+</html>
