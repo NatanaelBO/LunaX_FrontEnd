@@ -23,13 +23,10 @@
   <link rel="stylesheet" href="css/theme-light.css" />
 </head>
 <body>
-  <div class="lunax-background">
-    <div class="lunax-stars"></div>
-  </div>
-
+  <div class="lunax-background"><div class="lunax-stars"></div></div>
 <header class="lunax-header">
    <div class="lunax-header__inner">
-    <a class="lunax-header__logo" href="index.html">
+    <a class="lunax-header__logo" href="index.html" aria-label="Voltar para a página inicial">
       <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
     </a>
 
@@ -84,7 +81,6 @@
           <a class="lunax-categories-menu__footer" href="categorias.html">Ver todas categorias</a>
         </div>
       </div>
-      <a class="lunax-nav__link" href="ofertas.html">Ofertas</a>
       <a class="lunax-nav__link" href="blog.html">Blog</a>
     </nav>
 
@@ -98,20 +94,20 @@
       </a>
       <div class="lunax-dropdown" data-dropdown>
         <button class="lunax-icon-btn lunax-icon-btn--cart" type="button" data-dropdown-trigger aria-label="Carrinho" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1" />
-            <circle cx="20" cy="21" r="1" />
-            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="20" r="1" />
+            <circle cx="19" cy="20" r="1" />
+            <path d="M2 3h3l2.4 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 7H6" />
           </svg>
         </button>
 
         <div class="lunax-cart-menu" data-dropdown-menu>
           <div class="lunax-cart-menu__header">Seu carrinho</div>
           <div class="lunax-cart-menu__empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="20" r="1.25" />
+              <circle cx="19" cy="20" r="1.25" />
+              <path d="M2 3h3l2.4 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 7H6" />
             </svg>
             <span class="lunax-cart-menu__empty-title">Seu carrinho está vazio</span>
             <span class="lunax-cart-menu__empty-sub">Adicione produtos pra vê-los aqui.</span>
@@ -132,13 +128,6 @@
         <div class="lunax-notify-menu" data-dropdown-menu>
           <div class="lunax-notify-menu__body">
             <div class="lunax-notify-menu__rail">
-              <button class="lunax-notify-tab is-active" type="button" data-tab="ofertas" aria-label="Ofertas">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0L3 12V4a2 2 0 0 1 2-2h7.6z" />
-                  <circle cx="8" cy="8" r="1.2" />
-                </svg>
-                <span class="lunax-notify-tab__badge">3</span>
-              </button>
               <button class="lunax-notify-tab" type="button" data-tab="mensagens" aria-label="Mensagens">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -164,49 +153,8 @@
             </div>
 
             <div class="lunax-notify-menu__panels">
-              <div class="lunax-notify-panel is-active" data-tab-panel="ofertas">
-                <div class="lunax-notify-menu__header">Ofertas</div>
 
-                <div class="lunax-notify-item">
-                  <div class="lunax-notify-item__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
-                    </svg>
-                  </div>
-                  <div class="lunax-notify-item__text">
-                    <span class="lunax-notify-item__title">O vendedor te respondeu no anúncio: Conta Diamante 175 PDL</span>
-                    <span class="lunax-notify-item__preview">Opa boa noite, infelizmente não tem, mas posso transferir para outro email.</span>
-                    <span class="lunax-notify-item__time">há 2 dias</span>
-                  </div>
-                  <button class="lunax-notify-item__eye" type="button" aria-label="Marcar como visto">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div class="lunax-notify-item">
-                  <div class="lunax-notify-item__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
-                    </svg>
-                  </div>
-                  <div class="lunax-notify-item__text">
-                    <span class="lunax-notify-item__title">O vendedor te respondeu no anúncio: Coroa 8 Bit (Roblox)</span>
-                    <span class="lunax-notify-item__preview">Opa, esta sim!</span>
-                    <span class="lunax-notify-item__time">há 3 dias</span>
-                  </div>
-                  <button class="lunax-notify-item__eye" type="button" aria-label="Marcar como visto">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="lunax-notify-panel" data-tab-panel="mensagens">
+              <div class="lunax-notify-panel is-active" data-tab-panel="mensagens">
                 <div class="lunax-notify-menu__header">Mensagens</div>
 
                 <a class="lunax-notify-item" href="#">
@@ -344,130 +292,25 @@
     </div>
    </div>
   </header>
-
   <main class="lunax-blog">
     <div class="lunax-blog__header">
-      <span class="lunax-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-        Novidades e dicas
-      </span>
+      <span class="lunax-badge"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>Novidades e dicas</span>
       <h1 class="lunax-blog__title">Blog LunaX</h1>
-      <p class="lunax-blog__subtitle">
-        Dicas de segurança, novidades da plataforma e conteúdo sobre o mercado de ativos digitais.
-      </p>
+      <p class="lunax-blog__subtitle">Dicas de segurança, novidades da plataforma e conteúdo sobre o mercado de ativos digitais.</p>
     </div>
-
     <a class="lunax-blog__featured" href="#">
-      <div class="lunax-blog__featured-cover">
-        <img src="assets/images/mascote-passos/mascote-passos1.png" alt="" />
-      </div>
-      <div>
-        <span class="lunax-blog__featured-tag">Segurança</span>
-        <h2 class="lunax-blog__featured-title">
-          Como identificar vendedores confiáveis na LunaX
-        </h2>
-        <p class="lunax-blog__featured-excerpt">
-          Reputação, tempo de conta e avaliações: veja os sinais que indicam uma negociação
-          segura antes de fechar sua próxima compra.
-        </p>
-        <div class="lunax-blog__featured-meta">
-          <span>Equipe LunaX</span>
-          <span>·</span>
-          <span>5 min de leitura</span>
-        </div>
-      </div>
+      <div class="lunax-blog__featured-cover"><img src="assets/images/mascote-passos/mascote-passos1.png" alt="" /></div>
+      <div><span class="lunax-blog__featured-tag">Segurança</span><h2 class="lunax-blog__featured-title">Como identificar vendedores confiáveis na LunaX</h2><p class="lunax-blog__featured-excerpt">Reputação, tempo de conta e avaliações: veja os sinais que indicam uma negociação segura antes de fechar sua próxima compra.</p><div class="lunax-blog__featured-meta"><span>Equipe LunaX</span><span>·</span><span>5 min de leitura</span></div></div>
     </a>
-
     <div class="lunax-blog__grid">
-      <a class="lunax-blog-card" href="#">
-        <div class="lunax-blog-card__cover">
-          <img src="assets/images/games/roblox.webp" alt="" />
-        </div>
-        <div class="lunax-blog-card__body">
-          <span class="lunax-blog-card__tag">Guia</span>
-          <h3 class="lunax-blog-card__title">Entenda como funciona o pagamento em custódia</h3>
-          <p class="lunax-blog-card__excerpt">
-            Passo a passo de como seu dinheiro fica protegido até a entrega ser confirmada.
-          </p>
-          <span class="lunax-blog-card__meta">Equipe LunaX · 4 min de leitura</span>
-        </div>
-      </a>
-
-      <a class="lunax-blog-card" href="#">
-        <div class="lunax-blog-card__cover">
-          <img src="assets/images/games/valorant.webp" alt="" />
-        </div>
-        <div class="lunax-blog-card__body">
-          <span class="lunax-blog-card__tag">Dicas</span>
-          <h3 class="lunax-blog-card__title">5 cuidados antes de comprar uma conta de Valorant</h3>
-          <p class="lunax-blog-card__excerpt">
-            O que checar na descrição do anúncio antes de fechar negócio.
-          </p>
-          <span class="lunax-blog-card__meta">Equipe LunaX · 3 min de leitura</span>
-        </div>
-      </a>
-
-      <a class="lunax-blog-card" href="#">
-        <div class="lunax-blog-card__cover">
-          <img src="assets/images/games/genshin-impact.webp" alt="" />
-        </div>
-        <div class="lunax-blog-card__body">
-          <span class="lunax-blog-card__tag">Novidades</span>
-          <h3 class="lunax-blog-card__title">LunaX agora com suporte a mais categorias</h3>
-          <p class="lunax-blog-card__excerpt">
-            Confira as novidades mais recentes da plataforma e o que vem por aí.
-          </p>
-          <span class="lunax-blog-card__meta">Equipe LunaX · 2 min de leitura</span>
-        </div>
-      </a>
-
-      <a class="lunax-blog-card" href="#">
-        <div class="lunax-blog-card__cover">
-          <img src="assets/images/games/steam.webp" alt="" />
-        </div>
-        <div class="lunax-blog-card__body">
-          <span class="lunax-blog-card__tag">Guia</span>
-          <h3 class="lunax-blog-card__title">Como anunciar seu primeiro produto na LunaX</h3>
-          <p class="lunax-blog-card__excerpt">
-            Um guia rápido pra criar um anúncio completo e atrair compradores.
-          </p>
-          <span class="lunax-blog-card__meta">Equipe LunaX · 6 min de leitura</span>
-        </div>
-      </a>
-
-      <a class="lunax-blog-card" href="#">
-        <div class="lunax-blog-card__cover">
-          <img src="assets/images/games/minecraft.webp" alt="" />
-        </div>
-        <div class="lunax-blog-card__body">
-          <span class="lunax-blog-card__tag">Dicas</span>
-          <h3 class="lunax-blog-card__title">Vale a pena comprar contas com skins raras?</h3>
-          <p class="lunax-blog-card__excerpt">
-            Prós, contras e como avaliar se o preço pedido faz sentido.
-          </p>
-          <span class="lunax-blog-card__meta">Equipe LunaX · 4 min de leitura</span>
-        </div>
-      </a>
-
-      <a class="lunax-blog-card" href="#">
-        <div class="lunax-blog-card__cover">
-          <img src="assets/images/games/league-of-legends.webp" alt="" />
-        </div>
-        <div class="lunax-blog-card__body">
-          <span class="lunax-blog-card__tag">Segurança</span>
-          <h3 class="lunax-blog-card__title">O que fazer se um pedido não for entregue</h3>
-          <p class="lunax-blog-card__excerpt">
-            Como abrir uma disputa e o que esperar do processo de mediação.
-          </p>
-          <span class="lunax-blog-card__meta">Equipe LunaX · 3 min de leitura</span>
-        </div>
-      </a>
+      <a class="lunax-blog-card" href="#"><div class="lunax-blog-card__cover"><img src="assets/images/games/roblox.webp" alt="" /></div><div class="lunax-blog-card__body"><span class="lunax-blog-card__tag">Guia</span><h3 class="lunax-blog-card__title">Entenda como funciona o pagamento em custódia</h3><p class="lunax-blog-card__excerpt">Passo a passo de como seu dinheiro fica protegido até a entrega ser confirmada.</p><span class="lunax-blog-card__meta">Equipe LunaX · 4 min de leitura</span></div></a>
+      <a class="lunax-blog-card" href="#"><div class="lunax-blog-card__cover"><img src="assets/images/games/valorant.webp" alt="" /></div><div class="lunax-blog-card__body"><span class="lunax-blog-card__tag">Dicas</span><h3 class="lunax-blog-card__title">5 cuidados antes de comprar uma conta de Valorant</h3><p class="lunax-blog-card__excerpt">O que checar na descrição do anúncio antes de fechar negócio.</p><span class="lunax-blog-card__meta">Equipe LunaX · 3 min de leitura</span></div></a>
+      <a class="lunax-blog-card" href="#"><div class="lunax-blog-card__cover"><img src="assets/images/games/genshin-impact.webp" alt="" /></div><div class="lunax-blog-card__body"><span class="lunax-blog-card__tag">Novidades</span><h3 class="lunax-blog-card__title">LunaX agora com suporte a mais categorias</h3><p class="lunax-blog-card__excerpt">Confira as novidades mais recentes da plataforma e o que vem por aí.</p><span class="lunax-blog-card__meta">Equipe LunaX · 2 min de leitura</span></div></a>
+      <a class="lunax-blog-card" href="#"><div class="lunax-blog-card__cover"><img src="assets/images/games/steam.webp" alt="" /></div><div class="lunax-blog-card__body"><span class="lunax-blog-card__tag">Guia</span><h3 class="lunax-blog-card__title">Como anunciar seu primeiro produto na LunaX</h3><p class="lunax-blog-card__excerpt">Um guia rápido pra criar um anúncio completo e atrair compradores.</p><span class="lunax-blog-card__meta">Equipe LunaX · 6 min de leitura</span></div></a>
+      <a class="lunax-blog-card" href="#"><div class="lunax-blog-card__cover"><img src="assets/images/games/minecraft.webp" alt="" /></div><div class="lunax-blog-card__body"><span class="lunax-blog-card__tag">Dicas</span><h3 class="lunax-blog-card__title">Vale a pena comprar contas com skins raras?</h3><p class="lunax-blog-card__excerpt">Prós, contras e como avaliar se o preço pedido faz sentido.</p><span class="lunax-blog-card__meta">Equipe LunaX · 4 min de leitura</span></div></a>
+      <a class="lunax-blog-card" href="#"><div class="lunax-blog-card__cover"><img src="assets/images/games/league-of-legends.webp" alt="" /></div><div class="lunax-blog-card__body"><span class="lunax-blog-card__tag">Segurança</span><h3 class="lunax-blog-card__title">O que fazer se um pedido não for entregue</h3><p class="lunax-blog-card__excerpt">Como abrir uma disputa e o que esperar do processo de mediação.</p><span class="lunax-blog-card__meta">Equipe LunaX · 3 min de leitura</span></div></a>
     </div>
   </main>
-
-  <script src="js/theme.js"></script>
-  <script src="js/dropdowns.js"></script>
-  <script src="js/notification-tabs.js"></script>
-  <script src="js/header-scroll.js"></script>
+  <script src="js/theme.js"></script><script src="js/dropdowns.js"></script><script src="js/notification-tabs.js"></script><script src="js/header-scroll.js"></script>
 </body>
 </html>

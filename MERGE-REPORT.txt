@@ -1,0 +1,9 @@
+LunaX - ajuste do Blog
+
+Correção aplicada:
+- Os containers das imagens do Blog agora possuem altura fixa.
+- As imagens não determinam mais a altura do card.
+- As imagens usam max-width/max-height e width/height automáticos para se adequar ao espaço disponível.
+- object-fit: contain e object-position: center bottom foram mantidos.
+- O efeito de glow atrás das imagens foi preservado.
+- A estrutura anterior do projeto foi mantida.

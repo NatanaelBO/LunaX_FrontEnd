@@ -23,15 +23,12 @@
   <link rel="stylesheet" href="css/theme-light.css" />
 </head>
 <body>
-  <div class="lunax-background">
-    <div class="lunax-stars"></div>
-  </div>
-
+  <div class="lunax-background"><div class="lunax-stars"></div></div>
 <header class="lunax-header">
    <div class="lunax-header__inner">
-    <a class="lunax-header__logo" href="index.html">
+    <div class="lunax-header__logo">
       <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
-    </a>
+    </div>
 
     <form class="lunax-search lunax-header__search" role="search">
       <svg class="lunax-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -111,7 +108,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
               <circle cx="9" cy="21" r="1" />
               <circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2-1.6L23 6H6" />
             </svg>
             <span class="lunax-cart-menu__empty-title">Seu carrinho está vazio</span>
             <span class="lunax-cart-menu__empty-sub">Adicione produtos pra vê-los aqui.</span>
@@ -344,115 +341,14 @@
     </div>
    </div>
   </header>
-
-  <main class="lunax-deals">
-    <div class="lunax-deals__header">
-      <span class="lunax-badge">
-        <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>
-        Por tempo limitado
-      </span>
-      <h1 class="lunax-deals__title">Ofertas da semana</h1>
-      <p class="lunax-deals__subtitle">
-        Os melhores preços em contas, moedas e itens, selecionados pela equipe LunaX.
-      </p>
-    </div>
-
-    <div class="lunax-deals__grid">
-      <a class="lunax-deal-card" href="produtos.html">
-        <span class="lunax-deal-card__badge">-30%</span>
-        <div class="lunax-deal-card__cover">
-          <img src="assets/images/games/roblox.webp" alt="Roblox" />
-        </div>
-        <div class="lunax-deal-card__body">
-          <span class="lunax-deal-card__game">Roblox</span>
-          <h3 class="lunax-deal-card__title">Conta Nível Máximo com Skins Raras</h3>
-          <div class="lunax-deal-card__prices">
-            <span class="lunax-deal-card__price-old">R$ 79,00</span>
-            <span class="lunax-deal-card__price-new">R$ 55,00</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="lunax-deal-card" href="valorant.html">
-        <span class="lunax-deal-card__badge">-15%</span>
-        <div class="lunax-deal-card__cover">
-          <img src="assets/images/games/valorant.webp" alt="Valorant" />
-        </div>
-        <div class="lunax-deal-card__body">
-          <span class="lunax-deal-card__game">Valorant</span>
-          <h3 class="lunax-deal-card__title">Conta Radiante com Skins Exclusivas</h3>
-          <div class="lunax-deal-card__prices">
-            <span class="lunax-deal-card__price-old">R$ 320,00</span>
-            <span class="lunax-deal-card__price-new">R$ 272,00</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="lunax-deal-card" href="league-of-legends.html">
-        <span class="lunax-deal-card__badge">-20%</span>
-        <div class="lunax-deal-card__cover">
-          <img src="assets/images/games/league-of-legends.webp" alt="League of Legends" />
-        </div>
-        <div class="lunax-deal-card__body">
-          <span class="lunax-deal-card__game">League of Legends</span>
-          <h3 class="lunax-deal-card__title">Conta Diamante com 120+ Campeões</h3>
-          <div class="lunax-deal-card__prices">
-            <span class="lunax-deal-card__price-old">R$ 150,00</span>
-            <span class="lunax-deal-card__price-new">R$ 120,00</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="lunax-deal-card" href="minecraft.html">
-        <span class="lunax-deal-card__badge">-10%</span>
-        <div class="lunax-deal-card__cover">
-          <img src="assets/images/games/minecraft.webp" alt="Minecraft" />
-        </div>
-        <div class="lunax-deal-card__body">
-          <span class="lunax-deal-card__game">Minecraft</span>
-          <h3 class="lunax-deal-card__title">Conta Original Java + Bedrock</h3>
-          <div class="lunax-deal-card__prices">
-            <span class="lunax-deal-card__price-old">R$ 45,00</span>
-            <span class="lunax-deal-card__price-new">R$ 40,50</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="lunax-deal-card" href="steam.html">
-        <span class="lunax-deal-card__badge">-25%</span>
-        <div class="lunax-deal-card__cover">
-          <img src="assets/images/games/steam.webp" alt="Steam" />
-        </div>
-        <div class="lunax-deal-card__body">
-          <span class="lunax-deal-card__game">Steam</span>
-          <h3 class="lunax-deal-card__title">Conta com 40+ Jogos na Biblioteca</h3>
-          <div class="lunax-deal-card__prices">
-            <span class="lunax-deal-card__price-old">R$ 200,00</span>
-            <span class="lunax-deal-card__price-new">R$ 150,00</span>
-          </div>
-        </div>
-      </a>
-
-      <a class="lunax-deal-card" href="genshin-impact.html">
-        <span class="lunax-deal-card__badge">-18%</span>
-        <div class="lunax-deal-card__cover">
-          <img src="assets/images/games/genshin-impact.webp" alt="Genshin Impact" />
-        </div>
-        <div class="lunax-deal-card__body">
-          <span class="lunax-deal-card__game">Genshin Impact</span>
-          <h3 class="lunax-deal-card__title">Conta AR 55 com Personagens 5 Estrelas</h3>
-          <div class="lunax-deal-card__prices">
-            <span class="lunax-deal-card__price-old">R$ 280,00</span>
-            <span class="lunax-deal-card__price-new">R$ 230,00</span>
-          </div>
-        </div>
-      </a>
-    </div>
-  </main>
-
-  <script src="js/theme.js"></script>
-  <script src="js/dropdowns.js"></script>
-  <script src="js/notification-tabs.js"></script>
-  <script src="js/header-scroll.js"></script>
+  <main class="lunax-deals"><div class="lunax-deals__header"><span class="lunax-badge"><svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9L6 21l1.7-7L2.3 9.2l7.1-.6z"/></svg>Por tempo limitado</span><h1 class="lunax-deals__title">Ofertas da semana</h1><p class="lunax-deals__subtitle">Os melhores preços em contas, moedas e itens, selecionados pela equipe LunaX.</p></div><div class="lunax-deals__grid">
+      <a class="lunax-deal-card" href="produtos.html"><span class="lunax-deal-card__badge">-30%</span><div class="lunax-deal-card__cover"><img src="assets/images/games/roblox.webp" alt="Roblox" /></div><div class="lunax-deal-card__body"><span class="lunax-deal-card__game">Roblox</span><h3 class="lunax-deal-card__title">Conta Nível Máximo com Skins Raras</h3><div class="lunax-deal-card__prices"><span class="lunax-deal-card__price-old">R$ 79,00</span><span class="lunax-deal-card__price-new">R$ 55,00</span></div></div></a>
+      <a class="lunax-deal-card" href="valorant.html"><span class="lunax-deal-card__badge">-15%</span><div class="lunax-deal-card__cover"><img src="assets/images/games/valorant.webp" alt="Valorant" /></div><div class="lunax-deal-card__body"><span class="lunax-deal-card__game">Valorant</span><h3 class="lunax-deal-card__title">Conta Radiante com Skins Exclusivas</h3><div class="lunax-deal-card__prices"><span class="lunax-deal-card__price-old">R$ 320,00</span><span class="lunax-deal-card__price-new">R$ 272,00</span></div></div></a>
+      <a class="lunax-deal-card" href="league-of-legends.html"><span class="lunax-deal-card__badge">-20%</span><div class="lunax-deal-card__cover"><img src="assets/images/games/league-of-legends.webp" alt="League of Legends" /></div><div class="lunax-deal-card__body"><span class="lunax-deal-card__game">League of Legends</span><h3 class="lunax-deal-card__title">Conta Diamante com 120+ Campeões</h3><div class="lunax-deal-card__prices"><span class="lunax-deal-card__price-old">R$ 150,00</span><span class="lunax-deal-card__price-new">R$ 120,00</span></div></div></a>
+      <a class="lunax-deal-card" href="minecraft.html"><span class="lunax-deal-card__badge">-10%</span><div class="lunax-deal-card__cover"><img src="assets/images/games/minecraft.webp" alt="Minecraft" /></div><div class="lunax-deal-card__body"><span class="lunax-deal-card__game">Minecraft</span><h3 class="lunax-deal-card__title">Conta Original Java + Bedrock</h3><div class="lunax-deal-card__prices"><span class="lunax-deal-card__price-old">R$ 45,00</span><span class="lunax-deal-card__price-new">R$ 40,50</span></div></div></a>
+      <a class="lunax-deal-card" href="steam.html"><span class="lunax-deal-card__badge">-25%</span><div class="lunax-deal-card__cover"><img src="assets/images/games/steam.webp" alt="Steam" /></div><div class="lunax-deal-card__body"><span class="lunax-deal-card__game">Steam</span><h3 class="lunax-deal-card__title">Conta com 40+ Jogos na Biblioteca</h3><div class="lunax-deal-card__prices"><span class="lunax-deal-card__price-old">R$ 200,00</span><span class="lunax-deal-card__price-new">R$ 150,00</span></div></div></a>
+      <a class="lunax-deal-card" href="genshin-impact.html"><span class="lunax-deal-card__badge">-18%</span><div class="lunax-deal-card__cover"><img src="assets/images/games/genshin-impact.webp" alt="Genshin Impact" /></div><div class="lunax-deal-card__body"><span class="lunax-deal-card__game">Genshin Impact</span><h3 class="lunax-deal-card__title">Conta AR 55 com Personagens 5 Estrelas</h3><div class="lunax-deal-card__prices"><span class="lunax-deal-card__price-old">R$ 280,00</span><span class="lunax-deal-card__price-new">R$ 230,00</span></div></div></a>
+    </div></main>
+  <script src="js/theme.js"></script><script src="js/dropdowns.js"></script><script src="js/notification-tabs.js"></script><script src="js/header-scroll.js"></script>
 </body>
 </html>

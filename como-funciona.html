@@ -84,7 +84,6 @@
           <a class="lunax-categories-menu__footer" href="categorias.html">Ver todas categorias</a>
         </div>
       </div>
-      <a class="lunax-nav__link" href="ofertas.html">Ofertas</a>
       <a class="lunax-nav__link" href="blog.html">Blog</a>
     </nav>
 
@@ -98,20 +97,20 @@
       </a>
       <div class="lunax-dropdown" data-dropdown>
         <button class="lunax-icon-btn lunax-icon-btn--cart" type="button" data-dropdown-trigger aria-label="Carrinho" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="9" cy="21" r="1" />
-            <circle cx="20" cy="21" r="1" />
-            <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="9" cy="20" r="1" />
+            <circle cx="19" cy="20" r="1" />
+            <path d="M2 3h3l2.4 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 7H6" />
           </svg>
         </button>
 
         <div class="lunax-cart-menu" data-dropdown-menu>
           <div class="lunax-cart-menu__header">Seu carrinho</div>
           <div class="lunax-cart-menu__empty">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-              <circle cx="9" cy="21" r="1" />
-              <circle cx="20" cy="21" r="1" />
-              <path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6" />
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="9" cy="20" r="1.25" />
+              <circle cx="19" cy="20" r="1.25" />
+              <path d="M2 3h3l2.4 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 7H6" />
             </svg>
             <span class="lunax-cart-menu__empty-title">Seu carrinho está vazio</span>
             <span class="lunax-cart-menu__empty-sub">Adicione produtos pra vê-los aqui.</span>
@@ -132,13 +131,6 @@
         <div class="lunax-notify-menu" data-dropdown-menu>
           <div class="lunax-notify-menu__body">
             <div class="lunax-notify-menu__rail">
-              <button class="lunax-notify-tab is-active" type="button" data-tab="ofertas" aria-label="Ofertas">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M12.6 2.6 21 11a2 2 0 0 1 0 2.8l-6.6 6.6a2 2 0 0 1-2.8 0L3 12V4a2 2 0 0 1 2-2h7.6z" />
-                  <circle cx="8" cy="8" r="1.2" />
-                </svg>
-                <span class="lunax-notify-tab__badge">3</span>
-              </button>
               <button class="lunax-notify-tab" type="button" data-tab="mensagens" aria-label="Mensagens">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -164,49 +156,8 @@
             </div>
 
             <div class="lunax-notify-menu__panels">
-              <div class="lunax-notify-panel is-active" data-tab-panel="ofertas">
-                <div class="lunax-notify-menu__header">Ofertas</div>
 
-                <div class="lunax-notify-item">
-                  <div class="lunax-notify-item__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
-                    </svg>
-                  </div>
-                  <div class="lunax-notify-item__text">
-                    <span class="lunax-notify-item__title">O vendedor te respondeu no anúncio: Conta Diamante 175 PDL</span>
-                    <span class="lunax-notify-item__preview">Opa boa noite, infelizmente não tem, mas posso transferir para outro email.</span>
-                    <span class="lunax-notify-item__time">há 2 dias</span>
-                  </div>
-                  <button class="lunax-notify-item__eye" type="button" aria-label="Marcar como visto">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                  </button>
-                </div>
-
-                <div class="lunax-notify-item">
-                  <div class="lunax-notify-item__icon">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3z" />
-                    </svg>
-                  </div>
-                  <div class="lunax-notify-item__text">
-                    <span class="lunax-notify-item__title">O vendedor te respondeu no anúncio: Coroa 8 Bit (Roblox)</span>
-                    <span class="lunax-notify-item__preview">Opa, esta sim!</span>
-                    <span class="lunax-notify-item__time">há 3 dias</span>
-                  </div>
-                  <button class="lunax-notify-item__eye" type="button" aria-label="Marcar como visto">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
-                      <circle cx="12" cy="12" r="3" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-
-              <div class="lunax-notify-panel" data-tab-panel="mensagens">
+              <div class="lunax-notify-panel is-active" data-tab-panel="mensagens">
                 <div class="lunax-notify-menu__header">Mensagens</div>
 
                 <a class="lunax-notify-item" href="#">
