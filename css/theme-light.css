@@ -26,13 +26,3 @@
   background: rgba(24, 18, 43, 0.05);
 }
 
-:root[data-theme="light"] .lunax-btn-anunciar {
-  background: linear-gradient(135deg, var(--lunax-purple-soft), var(--lunax-purple));
-  color: #ffffff;
-  box-shadow: var(--lunax-glow-soft);
-}
-
-:root[data-theme="light"] .lunax-btn-anunciar:hover {
-  box-shadow: var(--lunax-glow);
-}
-

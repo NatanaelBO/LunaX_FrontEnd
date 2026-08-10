@@ -48,74 +48,299 @@
   flex-shrink: 0;
 }
 
-.lunax-nav__link {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  background: none;
-  border: none;
-  color: var(--lunax-white);
-  opacity: 0.85;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  text-decoration: none;
-  font-family: inherit;
-  padding: 0;
-}
-
-.lunax-nav__link:hover {
-  opacity: 1;
-}
-
-.lunax-nav__link svg {
-  width: 14px;
-  height: 14px;
-}
-
 .lunax-header__actions {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 16px;
   flex-shrink: 0;
+}
+
+.lunax-pill-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
+  color: var(--lunax-white);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lunax-pill-btn:hover {
+  border-color: var(--lunax-purple);
+  box-shadow: var(--lunax-glow-soft);
+}
+
+.lunax-pill-btn__icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  color: var(--lunax-white);
+}
+
+.lunax-pill-btn__chevron {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.lunax-wallet {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 42px;
+  padding: 0 16px;
+  border-radius: 11px;
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
+  color: var(--lunax-white);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lunax-wallet:hover {
+  border-color: var(--lunax-purple);
+  box-shadow: var(--lunax-glow-soft);
+}
+
+.lunax-wallet__icon {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  color: var(--lunax-white);
+}
+
+.lunax-wallet__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.lunax-wallet__label {
+  font-size: 11.5px;
+  color: var(--lunax-text-muted);
+}
+
+.lunax-wallet__value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.lunax-wallet__chevron {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.lunax-wallet-menu {
+  position: absolute;
+  top: calc(100% + 14px);
+  right: -10px;
+  z-index: 50;
+  width: 250px;
+  padding: 18px;
+  border-radius: var(--lunax-radius-lg);
+  background: var(--lunax-surface-strong);
+  border: 1px solid var(--lunax-surface-border);
+  box-shadow: var(--lunax-glow-soft), 0 24px 48px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s ease;
+  text-align: center;
+}
+
+.lunax-wallet-menu::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  right: 28px;
+  width: 13px;
+  height: 13px;
+  background: var(--lunax-surface-strong);
+  border-left: 1px solid var(--lunax-surface-border);
+  border-top: 1px solid var(--lunax-surface-border);
+  transform: rotate(45deg);
+}
+
+.lunax-wallet-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.lunax-wallet-menu__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, var(--lunax-purple-soft), var(--lunax-purple));
+  box-shadow: 0 0 0 4px rgba(124, 92, 255, 0.14);
+  color: #ffffff;
+}
+
+.lunax-wallet-menu__icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.lunax-wallet-menu__balance {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.lunax-wallet-menu__label {
+  font-size: 12px;
+  color: var(--lunax-text-muted);
+}
+
+.lunax-wallet-menu__amount {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--lunax-white);
+}
+
+.lunax-wallet-menu__divider {
+  height: 1px;
+  margin: 0 0 16px;
+  background: var(--lunax-surface-border);
+}
+
+.lunax-wallet-menu__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 11px 16px;
+  border-radius: var(--lunax-radius-sm);
+  background: linear-gradient(135deg, var(--lunax-purple-soft), var(--lunax-purple));
+  color: var(--lunax-white);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: var(--lunax-glow-soft);
+  transition: opacity 0.15s ease, box-shadow 0.15s ease;
+}
+
+.lunax-wallet-menu__cta:hover {
+  opacity: 0.9;
+  box-shadow: var(--lunax-glow);
+}
+
+.lunax-user-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 42px;
+  padding: 0 14px 0 6px;
+  border-radius: 11px;
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
+  color: var(--lunax-white);
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lunax-user-trigger:hover {
+  border-color: var(--lunax-purple);
+  box-shadow: var(--lunax-glow-soft);
+}
+
+.lunax-user-trigger__avatar {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.lunax-user-trigger__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lunax-user-trigger__status {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2ecc71;
+  border: 2px solid var(--lunax-black);
+  box-shadow: 0 0 6px rgba(46, 204, 113, 0.8);
+}
+
+.lunax-user-trigger__name {
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.lunax-user-trigger__chevron {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  opacity: 0.7;
 }
 
 .lunax-btn-anunciar {
   display: flex;
   align-items: center;
   gap: 6px;
-  padding: 10px 18px;
-  border-radius: var(--lunax-radius-pill);
-  background: var(--lunax-white);
-  color: var(--lunax-black);
+  height: 42px;
+  padding: 0 18px;
+  border-radius: 11px;
+  background: linear-gradient(135deg, var(--lunax-purple-soft), var(--lunax-purple));
+  color: var(--lunax-white);
   border: none;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 14.5px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 0 24px rgba(245, 244, 255, 0.15);
+  box-shadow: var(--lunax-glow-soft);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .lunax-btn-anunciar:hover {
   transform: translateY(-1px);
-  box-shadow: 0 0 30px rgba(245, 244, 255, 0.25);
+  box-shadow: var(--lunax-glow);
 }
 
 .lunax-btn-anunciar svg {
-  width: 14px;
-  height: 14px;
+  width: 15px;
+  height: 15px;
 }
 
 .lunax-icon-btn {
   position: relative;
   display: grid;
   place-items: center;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(124, 92, 255, 0.08);
-  border: 1px solid rgba(124, 92, 255, 0.3);
+  width: 42px;
+  height: 42px;
+  border-radius: 11px;
+  background: var(--lunax-surface);
+  border: 1px solid var(--lunax-surface-border);
   color: var(--lunax-white);
   cursor: pointer;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -127,20 +352,8 @@
 }
 
 .lunax-icon-btn svg {
-  width: 18px;
-  height: 18px;
-}
-
-.lunax-icon-btn--user {
-  padding: 0;
-  overflow: hidden;
-  border: none;
-}
-
-.lunax-icon-btn--user img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 19px;
+  height: 19px;
 }
 
 .lunax-dropdown {

@@ -28,11 +28,6 @@
   line-height: 1.5;
 }
 
-
-/* =========================================
-   DESTAQUE PRINCIPAL
-   ========================================= */
-
 .lunax-blog__featured {
   display: grid;
   grid-template-columns: 1.1fr 1fr;
@@ -44,10 +39,8 @@
   background: var(--lunax-surface);
   border: 1px solid var(--lunax-surface-border);
   text-decoration: none;
+  overflow: hidden;
 }
-
-
-/* Área da boneca */
 
 .lunax-blog__featured-cover {
   position: relative;
@@ -58,27 +51,39 @@
   align-items: flex-end;
   justify-content: center;
 
+  align-self: end;
+  margin-bottom: calc(var(--lunax-space-6) * -1);
+
   border-radius: var(--lunax-radius-md);
   overflow: hidden;
+  isolation: isolate;
 
   background: transparent;
   box-shadow: none;
 }
 
-
-/* Remove completamente o efeito atrás da boneca */
-
-.lunax-blog__featured-cover::before,
-.lunax-blog__featured-cover::after {
-  display: none;
-  content: none;
+.lunax-blog__featured-cover::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -8%;
+  transform: translateX(-50%);
+  width: 58%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(124, 92, 255, 0.48) 0%,
+    rgba(124, 92, 255, 0.22) 42%,
+    transparent 70%
+  );
+  filter: blur(18px);
+  z-index: 0;
 }
-
-
-/* Imagem da boneca */
 
 .lunax-blog__featured-cover img {
   position: relative;
+  z-index: 1;
 
   display: block;
 
@@ -96,11 +101,6 @@
 
   margin: 0;
 }
-
-
-/* =========================================
-   TEXTO DO DESTAQUE
-   ========================================= */
 
 .lunax-blog__featured-tag {
   display: inline-flex;
@@ -143,11 +143,6 @@
   color: var(--lunax-text-muted);
 }
 
-
-/* =========================================
-   GRID DOS POSTS
-   ========================================= */
-
 .lunax-blog__grid {
   display: grid;
   grid-template-columns: repeat(
@@ -156,11 +151,6 @@
   );
   gap: var(--lunax-space-5);
 }
-
-
-/* =========================================
-   CARDS DOS POSTS
-   ========================================= */
 
 .lunax-blog-card {
   display: flex;
@@ -185,11 +175,6 @@
   transform: translateY(-3px);
 }
 
-
-/* =========================================
-   IMAGEM DOS CARDS
-   ========================================= */
-
 .lunax-blog-card__cover {
   position: relative;
 
@@ -203,11 +188,6 @@
   overflow: hidden;
   isolation: isolate;
 }
-
-
-/* Efeito dos cards menores
-   Mantido, pois você pediu para remover
-   apenas o efeito da boneca do destaque */
 
 .lunax-blog-card__cover::before {
   content: "";
@@ -237,9 +217,6 @@
   z-index: 0;
 }
 
-
-/* Imagem dos cards */
-
 .lunax-blog-card__cover img {
   position: relative;
   z-index: 1;
@@ -261,11 +238,6 @@
     0 8px 18px rgba(124, 92, 255, 0.25)
   );
 }
-
-
-/* =========================================
-   CONTEÚDO DOS CARDS
-   ========================================= */
 
 .lunax-blog-card__body {
   display: flex;
@@ -308,11 +280,6 @@
   color: var(--lunax-text-muted);
 }
 
-
-/* =========================================
-   RESPONSIVIDADE
-   ========================================= */
-
 @media (max-width: 780px) {
 
   .lunax-blog__featured {
@@ -321,5 +288,7 @@
 
   .lunax-blog__featured-cover {
     height: 260px;
+    align-self: center;
+    margin-bottom: 0;
   }
 }

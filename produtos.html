@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="css/produtos-page.css" />
   <link rel="stylesheet" href="css/theme-light.css" />
   <link rel="stylesheet" href="css/loading.css" />
+  <link rel="stylesheet" href="css/footer.css" />
 </head>
 <body>
   <div class="lunax-loading" id="lunax-loading">
@@ -40,20 +41,17 @@
       <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
     </a>
 
-    <form class="lunax-search lunax-header__search" role="search">
-      <svg class="lunax-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="11" cy="11" r="7" />
-        <line x1="21" y1="21" x2="16.65" y2="16.65" />
-      </svg>
-      <input class="lunax-search__input" type="text" placeholder="Buscar produtos..." />
-      <span class="lunax-search__shortcut">Ctrl K</span>
-    </form>
-
     <nav class="lunax-nav">
       <div class="lunax-dropdown lunax-nav__dropdown" data-dropdown>
-        <button class="lunax-nav__link" type="button" data-dropdown-trigger aria-haspopup="true" aria-expanded="false">
+        <button class="lunax-pill-btn" type="button" data-dropdown-trigger aria-haspopup="true" aria-expanded="false">
+          <svg class="lunax-pill-btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="7" height="7" rx="1.5" />
+            <rect x="14" y="3" width="7" height="7" rx="1.5" />
+            <rect x="3" y="14" width="7" height="7" rx="1.5" />
+            <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          </svg>
           Categorias
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <svg class="lunax-pill-btn__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <polyline points="6 9 12 15 18 9" />
           </svg>
         </button>
@@ -91,10 +89,49 @@
           <a class="lunax-categories-menu__footer" href="categorias.html">Ver todas categorias</a>
         </div>
       </div>
-      <a class="lunax-nav__link" href="blog.html">Blog</a>
     </nav>
 
+    <form class="lunax-search lunax-header__search" role="search">
+      <svg class="lunax-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="7" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <input class="lunax-search__input" type="text" placeholder="Buscar produtos, categorias ou vendedores..." />
+      <span class="lunax-search__shortcut">Ctrl K</span>
+    </form>
+
     <div class="lunax-header__actions">
+      <div class="lunax-dropdown" data-dropdown>
+        <button class="lunax-wallet" type="button" data-dropdown-trigger aria-label="Carteira" aria-haspopup="true" aria-expanded="false">
+          <svg class="lunax-wallet__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+            <path d="M16 12h3" />
+          </svg>
+          <span class="lunax-wallet__text">
+            <span class="lunax-wallet__label">Carteira</span>
+            <span class="lunax-wallet__value">R$ 0,00</span>
+          </span>
+          <svg class="lunax-wallet__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
+        </button>
+
+        <div class="lunax-wallet-menu" data-dropdown-menu>
+          <div class="lunax-wallet-menu__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 7a2 2 0 0 1 2-2h13a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7Z" />
+              <path d="M16 12h3" />
+            </svg>
+          </div>
+          <div class="lunax-wallet-menu__balance">
+            <span class="lunax-wallet-menu__label">Seu saldo</span>
+            <span class="lunax-wallet-menu__amount">R$ 0,00</span>
+          </div>
+          <div class="lunax-wallet-menu__divider"></div>
+          <a class="lunax-wallet-menu__cta" href="#">Adicionar saldo</a>
+        </div>
+      </div>
+
       <a class="lunax-btn-anunciar" href="anunciar.html">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
           <line x1="12" y1="5" x2="12" y2="19" />
@@ -109,6 +146,7 @@
             <circle cx="19" cy="20" r="1" />
             <path d="M2 3h3l2.4 11.2a2 2 0 0 0 2 1.6h8.8a2 2 0 0 0 1.9-1.4L22 7H6" />
           </svg>
+          <span class="lunax-icon-btn__badge">2</span>
         </button>
 
         <div class="lunax-cart-menu" data-dropdown-menu>
@@ -268,8 +306,15 @@
       </div>
 
       <div class="lunax-dropdown" data-dropdown>
-        <button class="lunax-icon-btn lunax-icon-btn--user" type="button" data-dropdown-trigger aria-label="Conta" aria-haspopup="true" aria-expanded="false">
-          <img src="assets/images/profile.png" alt="Foto de perfil" />
+        <button class="lunax-user-trigger" type="button" data-dropdown-trigger aria-label="Conta" aria-haspopup="true" aria-expanded="false">
+          <span class="lunax-user-trigger__avatar">
+            <img src="assets/images/profile.png" alt="Foto de perfil" />
+            <span class="lunax-user-trigger__status"></span>
+          </span>
+          <span class="lunax-user-trigger__name">Lunax</span>
+          <svg class="lunax-user-trigger__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="6 9 12 15 18 9" />
+          </svg>
         </button>
 
         <div class="lunax-account-menu" data-dropdown-menu>
@@ -1394,5 +1439,93 @@
   <script src="js/produtos-filtro.js"></script>
   <script src="js/produtos-hover.js"></script>
   <script src="js/loading.js"></script>
+  <footer class="lunax-footer">
+    <div class="lunax-footer__main">
+      <div>
+        <a class="lunax-footer__brand-logo" href="index.html">
+          <img data-logo-swap src="assets/images/logo.png" alt="LunaX" />
+        </a>
+        <p class="lunax-footer__brand-text">
+          Marketplace de ativos digitais. Compre e venda contas, moedas, gift cards
+          e itens com segurança, direto entre jogadores.
+        </p>
+        <div class="lunax-footer__socials">
+          <a class="lunax-footer__social-link" href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="2" y="2" width="20" height="20" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+          <a class="lunax-footer__social-link" href="#" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.2l-5.6-7.3L3.9 22H.8l8.1-9.3L.5 2h7.4l5.1 6.7L18.9 2Zm-1.3 18h2L7.4 4H5.3l12.3 16Z" />
+            </svg>
+          </a>
+          <a class="lunax-footer__social-link" href="#" aria-label="Discord">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M20.3 5.4A18 18 0 0 0 15.9 4l-.3.6a13 13 0 0 1 3.7 1.4 15.6 15.6 0 0 0-13.9 0 13 13 0 0 1 3.7-1.4L8.8 4a18 18 0 0 0-4.4 1.4C1.6 9.4 1 13.3 1.2 17.2a17.6 17.6 0 0 0 5.4 2.7l.7-1.1a11 11 0 0 1-1.8-.9l.5-.4a12.6 12.6 0 0 0 10.6 0l.5.4a11 11 0 0 1-1.8.9l.7 1.1a17.5 17.5 0 0 0 5.4-2.7c.3-4.5-.7-8.4-3-11.8ZM8.7 14.8c-.8 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8 1.6.8 1.6 1.8-.7 1.8-1.6 1.8Zm6.6 0c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8 1.6.8 1.6 1.8-.7 1.8-1.6 1.8Z" />
+            </svg>
+          </a>
+          <a class="lunax-footer__social-link" href="#" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none">
+              <path d="M16.6 2h-3.2v13.7a2.9 2.9 0 1 1-2.1-2.8V9.6a6.1 6.1 0 1 0 5.3 6V8.4a8.2 8.2 0 0 0 4.8 1.5V6.7a4.9 4.9 0 0 1-4.8-4.7Z" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <span class="lunax-footer__col-title">Marketplace</span>
+        <div class="lunax-footer__col-list">
+          <a class="lunax-footer__col-link" href="produtos.html">Explorar produtos</a>
+          <a class="lunax-footer__col-link" href="categorias.html">Categorias</a>
+          <a class="lunax-footer__col-link" href="ofertas.html">Ofertas</a>
+          <a class="lunax-footer__col-link" href="anunciar.html">Anunciar</a>
+        </div>
+      </div>
+
+      <div>
+        <span class="lunax-footer__col-title">Categorias</span>
+        <div class="lunax-footer__col-list">
+          <a class="lunax-footer__col-link" href="produtos.html">Roblox</a>
+          <a class="lunax-footer__col-link" href="valorant.html">Valorant</a>
+          <a class="lunax-footer__col-link" href="league-of-legends.html">League of Legends</a>
+          <a class="lunax-footer__col-link" href="minecraft.html">Minecraft</a>
+          <a class="lunax-footer__col-link" href="steam.html">Steam</a>
+        </div>
+      </div>
+
+      <div>
+        <span class="lunax-footer__col-title">Suporte</span>
+        <div class="lunax-footer__col-list">
+          <a class="lunax-footer__col-link" href="como-funciona.html">Como funciona</a>
+          <a class="lunax-footer__col-link" href="blog.html">Blog</a>
+          <a class="lunax-footer__col-link" href="#">Central de ajuda</a>
+          <a class="lunax-footer__col-link" href="#">Fale conosco</a>
+        </div>
+      </div>
+
+      <div>
+        <span class="lunax-footer__col-title">Empresa</span>
+        <div class="lunax-footer__col-list">
+          <a class="lunax-footer__col-link" href="#">Sobre a LunaX</a>
+          <a class="lunax-footer__col-link" href="#">Termos de uso</a>
+          <a class="lunax-footer__col-link" href="#">Política de privacidade</a>
+          <a class="lunax-footer__col-link" href="#">Segurança</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lunax-footer__bottom">
+      <span class="lunax-footer__copy">© 2026 LunaX. Todos os direitos reservados.</span>
+      <div class="lunax-footer__legal">
+        <a href="#">Termos de uso</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </footer>
+
 </body>
 </html>
